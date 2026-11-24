@@ -1,0 +1,49 @@
+{
+  "name": "ASK — Legal Advisors & Law Firm",
+  "short_name": "ASK",
+  "description": "تمثيل قانوني رفيع المستوى أمام محاكم النقض والتحكيم الدولي — High-impact legal representation across borders.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0A0A0A",
+  "theme_color": "#0A0A0A",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["legal", "business", "productivity"],
+  "icons": [
+    {
+      "src": "assets/media/logo-ask-new.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/media/logo-ask-new.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/media/logo-ask-new.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "تواصل معنا",
+      "short_name": "تواصل",
+      "url": "/contact-us.html",
+      "icons": [{ "src": "assets/media/logo-ask-new.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "خدماتنا",
+      "short_name": "الخدمات",
+      "url": "/services.html",
+      "icons": [{ "src": "assets/media/logo-ask-new.png", "sizes": "192x192" }]
+    }
+  ]
+}

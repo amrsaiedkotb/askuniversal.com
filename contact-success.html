@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Message Sent | ASK</title>
+  <link rel="icon" type="image/png" href="assets/media/logo-ask-new.png">
+  <style>
+    :root{--gold:#FFD166;--black:#0A0A0A;--black-mid:#141414;--border:rgba(255, 209, 102,0.14);--white:#FFFFFF;--white-dim:#CFC8BD;}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at top, rgba(255, 209, 102,0.08), transparent 42%),var(--black);color:var(--white);font-family:'Montserrat',sans-serif}
+    .card{width:min(100%,720px);background:var(--black-mid);border:1px solid var(--border);padding:40px 32px;border-radius:20px;text-align:center;box-shadow:0 22px 80px rgba(0,0,0,.35)}
+    h1{margin:0 0 16px;font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,64px);font-weight:600;color:var(--gold)}
+    p{margin:0 auto 14px;max-width:560px;color:var(--white-dim);line-height:1.8;font-size:15px}
+    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:999px;border:1px solid var(--border);text-decoration:none;color:var(--white);font-size:11px;letter-spacing:.18em;text-transform:uppercase}
+    .btn.primary{background:var(--gold);color:var(--black);border-color:transparent;font-weight:600}
+  
+.page-bg{position:fixed;inset:0;z-index:-2;pointer-events:none;background-color:#0C1220;background-image:url('assets/media/gold-world-map.webp');background-repeat:no-repeat;background-position:center center;}
+@media(orientation:landscape){.page-bg{background-size:cover;}}
+@media(orientation:portrait){.page-bg{background-size:100% auto;background-position:center 30%;}}
+.page-bg::after{content:'';position:absolute;inset:0;}
+@media(orientation:landscape){.page-bg::after{background:rgba(6,12,24,0.24);}}
+@media(orientation:portrait){.page-bg::after{background:rgba(6,12,24,0.32);}}
+</style>
+<link rel="stylesheet" href="assets/css/site-typography.css">
+<link rel="stylesheet" href="assets/css/site-responsive.css">
+</head>
+<body>
+<div class="page-bg"></div>
+  <main class="card">
+    <h1>Message Sent</h1>
+    <p>Your message has been saved for the <img class="inline-brand-logo" src="assets/media/logo-ask-new.png" alt=""> team. We will review it and respond through the email address you submitted.</p>
+    <p>تم استلام رسالتك وحفظها لفريق <img class="inline-brand-logo" src="assets/media/logo-ask-new.png" alt=""> سنراجعها ونتواصل معك عبر البريد الإلكتروني الذي أدخلته.</p>
+    <div class="actions">
+      <a class="btn primary" href="contact-us.html">Back to Contact</a>
+      <a class="btn" href="index.html">Return Home</a>
+    </div>
+  </main>
+<script src="assets/js/site-responsive.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>لوحة الإدارة | ASK</title>
+<link rel="icon" href="assets/media/logo-ask-new.png">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0A0A0A;color:#FFFFFF;font-family:'Tajawal',sans-serif;min-height:100vh;}
+:root{--g:#FFD166;--gd:#E0AC4A;--gf:#C9971F;--bm:#141414;--bl:#1E1E1E;--br:#2A2A2A;--w:#FFFFFF;--wd:#A8A097;--wf:#5A5650;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 60px;height:100px;background:rgba(10,10,10,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255, 209, 102,0.12);transition:border-color 0.3s;}
+.nav-logo img{height:44px;object-fit:contain;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.admin-tag{font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--g);background:rgba(255, 209, 102,.08);border:1px solid rgba(255, 209, 102,.15);padding:4px 10px;border-radius:2px;}
+.btn-logout{font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf);background:none;border:1px solid var(--br);border-radius:2px;padding:7px 14px;cursor:pointer;transition:all .2s;}
+.btn-logout:hover{color:var(--g);border-color:var(--gd);}
+
+.wrap{max-width:1200px;margin:0 auto;padding:90px 32px 60px;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,40px);font-weight:300;margin-bottom:28px;}
+.page-title em{font-style:italic;color:var(--g);}
+
+.tabs{display:flex;border-bottom:1px solid var(--br);margin-bottom:28px;overflow-x:auto;}
+.tab{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:12px 20px;background:none;border:none;color:var(--wf);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;margin-bottom:-1px;}
+.tab.active{color:var(--g);border-bottom-color:var(--g);}
+.tab:hover{color:var(--wd);}
+.panel{display:none;}.panel.active{display:block;}
+
+/* Buttons */
+.btn{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;padding:10px 18px;transition:all .2s;}
+.btn-gold{background:var(--g);color:#0A0A0A;border:none;font-weight:700;}.btn-gold:hover{background:#FFE29A;}
+.btn-outline{background:none;color:var(--gd);border:1px solid rgba(255, 209, 102,.25);}.btn-outline:hover{background:rgba(255, 209, 102,.06);}
+.btn-sm{padding:6px 12px;font-size:9px;}
+
+/* Bar */
+.bar{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;align-items:center;}
+.search{flex:1;min-width:200px;background:var(--bm);border:1px solid var(--br);border-radius:2px;padding:10px 14px;color:var(--w);font-size:14px;font-family:'Tajawal',sans-serif;outline:none;}
+.search:focus{border-color:var(--gd);}
+
+/* Table */
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+th{font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--wf);padding:10px 14px;text-align:right;border-bottom:1px solid var(--br);white-space:nowrap;}
+td{padding:14px;border-bottom:1px solid rgba(42,42,42,.5);color:var(--wd);vertical-align:middle;}
+tr:hover td{background:rgba(255,255,255,.02);}
+.td-name{color:var(--w);font-weight:500;}
+.td-num{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.1em;color:var(--gd);}
+.s-badge{font-family:'Montserrat',sans-serif;font-size:9px;letter-spacing:.1em;padding:3px 8px;border-radius:2px;white-space:nowrap;}
+.s-active{background:rgba(50,180,100,.12);color:#5dc87a;}
+.s-inactive{background:rgba(200,200,50,.1);color:#c8c832;}
+.s-closed{background:rgba(180,50,50,.1);color:#c85050;}
+
+/* Form fields */
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--wd);margin-bottom:6px;}
+.field input,.field select,.field textarea{width:100%;background:var(--bl);border:1px solid var(--br);border-radius:2px;padding:10px 14px;color:var(--w);font-size:14px;font-family:'Tajawal',sans-serif;outline:none;transition:border-color .2s;}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gd);}
+.field textarea{min-height:100px;resize:vertical;}
+
+/* Messages */
+.msg{padding:10px 14px;border-radius:2px;font-size:13px;margin-bottom:12px;display:none;}
+.msg.show{display:block;}
+.msg.ok{background:rgba(50,180,100,.1);color:#5dc87a;border:1px solid rgba(50,180,100,.2);}
+.msg.err{background:rgba(200,50,50,.1);color:#f08080;border:1px solid rgba(200,50,50,.2);}
+
+/* Modal */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;}
+.overlay.open{display:flex;}
+.modal{background:var(--bm);border:1px solid rgba(255, 209, 102,.1);border-radius:4px;padding:32px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--w);margin-bottom:20px;}
+.modal-footer{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+
+/* Empty state */
+.empty{text-align:center;padding:40px;color:var(--wf);font-style:italic;font-size:14px;}
+
+.panel-note{font-size:12px;color:var(--wf);}
+.workspace-shell{display:grid;grid-template-columns:minmax(280px,340px) minmax(0,1fr);gap:18px;align-items:start;}
+.workspace-sidebar,.workspace-main{background:var(--bm);border:1px solid var(--br);border-radius:18px;overflow:hidden;}
+.workspace-sidebar{min-height:620px;}
+.sidebar-head,.detail-head{padding:20px 22px;border-bottom:1px solid rgba(255, 209, 102,.08);}
+.sidebar-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--w);margin-bottom:6px;}
+.sidebar-copy,.detail-copy{font-size:13px;line-height:1.7;color:var(--wf);}
+.client-list{display:grid;gap:10px;padding:16px;max-height:620px;overflow:auto;}
+.client-card{width:100%;border:1px solid var(--br);border-radius:16px;background:var(--bl);padding:16px;text-align:inherit;color:var(--w);cursor:pointer;transition:border-color .2s,transform .2s,background .2s;}
+.client-card:hover{transform:translateY(-1px);border-color:rgba(255, 209, 102,.26);}
+.client-card.active{border-color:var(--gd);background:rgba(255, 209, 102,.07);}
+.client-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;}
+.client-card-username{font-size:15px;font-weight:600;word-break:break-word;}
+.client-card-id{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gd);white-space:nowrap;}
+.client-card-meta{display:grid;gap:6px;font-size:12px;color:var(--wd);}
+.client-card-meta span strong{color:var(--w);font-weight:500;}
+.client-card-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;}
+.meta-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255, 209, 102,.12);background:rgba(255,255,255,.02);font-size:10px;font-family:'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--wd);}
+.detail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.detail-title{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;color:var(--w);margin-bottom:6px;word-break:break-word;}
+.detail-id{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gd);margin-bottom:8px;}
+.detail-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.detail-body{padding:22px;display:grid;gap:18px;}
+.detail-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}
+.summary-card{background:var(--bl);border:1px solid var(--br);border-radius:16px;padding:16px;}
+.summary-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--wf);margin-bottom:8px;}
+.summary-value{font-size:14px;color:var(--w);line-height:1.6;word-break:break-word;}
+.file-section{background:var(--bl);border:1px solid var(--br);border-radius:18px;padding:18px;}
+.file-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+.file-section-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;color:var(--g);}
+.file-section-copy{font-size:13px;line-height:1.7;color:var(--wd);}
+.upload-zone{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:150px;border:1px dashed rgba(255, 209, 102,.22);border-radius:18px;background:rgba(255,255,255,.02);padding:20px;text-align:center;color:var(--wd);margin-bottom:16px;transition:border-color .2s,background .2s;}
+.upload-zone strong{font-size:15px;color:var(--w);font-weight:600;}
+.upload-zone span{font-size:12px;line-height:1.6;}
+.upload-zone.dragover{border-color:var(--gd);background:rgba(255, 209, 102,.06);}
+.upload-zone.loading{opacity:.7;pointer-events:none;}
+.upload-zone input{position:absolute;inset:0;opacity:0;cursor:pointer;}
+.file-list{display:grid;gap:12px;}
+.file-card{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:16px;border:1px solid rgba(255, 209, 102,.08);border-radius:16px;background:rgba(255,255,255,.02);}
+.file-card-main{display:grid;gap:8px;min-width:0;}
+.file-card-title{font-size:15px;color:var(--w);font-weight:600;word-break:break-word;}
+.file-card-sub{font-size:12px;color:var(--wd);line-height:1.7;}
+.file-card-meta{display:flex;gap:8px;flex-wrap:wrap;}
+.file-card-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.file-badge{display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:999px;background:rgba(255, 209, 102,.06);border:1px solid rgba(255, 209, 102,.12);font-size:10px;font-family:'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gd);}
+.file-badge.locked{background:rgba(90,135,215,.10);border-color:rgba(90,135,215,.24);color:#9cc1ff;}
+.workspace-empty{padding:40px 24px;text-align:center;color:var(--wf);font-size:14px;}
+.workspace-empty strong{display:block;color:var(--w);font-size:16px;margin-bottom:8px;}
+.toast-stack{position:fixed;right:18px;bottom:18px;display:grid;gap:10px;z-index:320;}
+.toast{min-width:260px;max-width:320px;padding:14px 16px;border-radius:16px;border:1px solid rgba(255, 209, 102,.15);background:rgba(20,20,20,.96);box-shadow:0 18px 40px rgba(0,0,0,.32);}
+.toast strong{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--w);margin-bottom:4px;}
+.toast span{display:block;font-size:13px;line-height:1.6;color:var(--wd);}
+.toast.ok{border-color:rgba(50,180,100,.24);}
+.toast.err{border-color:rgba(200,50,50,.26);}
+
+/* Lang buttons */
+.lang-btns{display:flex;gap:6px;}
+.lang-btn{background:none;border:1px solid var(--br);border-radius:2px;padding:5px 10px;color:var(--wf);cursor:pointer;font-size:18px;transition:all .2s;}
+.lang-btn.active{border-color:var(--gd);opacity:1;}
+.lang-btn:not(.active){opacity:.5;}
+.ar-txt{display:inline;}.en-txt{display:none;}
+html[lang=en] .ar-txt{display:none;}html[lang=en] .en-txt{display:inline;}
+html[lang=en]{direction:ltr;}html[lang=ar]{direction:rtl;}
+html.embedded-frame body{background:transparent;}
+html.embedded-frame nav,
+html.embedded-frame .page-title{display:none;}
+html.embedded-frame .wrap{max-width:none;padding:0 0 20px;}
+html.embedded-frame .tabs{margin-bottom:20px;}
+html.embedded-frame .workspace-sidebar,
+html.embedded-frame .workspace-main,
+html.embedded-frame .panel,
+html.embedded-frame .modal{box-shadow:none;}
+
+@media(max-width:1024px){.workspace-shell{grid-template-columns:1fr;}.workspace-sidebar{min-height:auto;}.detail-summary{grid-template-columns:1fr 1fr;}}
+@media(max-width:768px){nav{padding:0 16px;}.wrap{padding:80px 16px 40px;}.tab{padding:10px 14px;}.detail-summary{grid-template-columns:1fr;}.detail-head{padding:18px;}.detail-body{padding:18px;}.file-card{flex-direction:column;}.file-card-actions{justify-content:flex-start;}.toast-stack{left:16px;right:16px;}}
+
+.page-bg{position:fixed;inset:0;z-index:-2;pointer-events:none;background-color:#0C1220;background-image:url('assets/media/gold-world-map.webp');background-repeat:no-repeat;background-position:center center;}
+@media(orientation:landscape){.page-bg{background-size:cover;}}
+@media(orientation:portrait){.page-bg{background-size:100% auto;background-position:center 30%;}}
+.page-bg::after{content:'';position:absolute;inset:0;}
+@media(orientation:landscape){.page-bg::after{background:rgba(6,12,24,0.24);}}
+@media(orientation:portrait){.page-bg::after{background:rgba(6,12,24,0.32);}}
+</style>
+<link rel="stylesheet" href="assets/css/site-typography.css">
+<link rel="stylesheet" href="assets/css/site-responsive.css">
+</head>
+<body>
+<div class="page-bg"></div>
+<script>
+document.documentElement.classList.toggle("embedded-frame", window.top !== window.self || new URLSearchParams(window.location.search).has("embedded"));
+if (window.top === window.self) {
+  window.location.replace("admin/index.html");
+}
+</script>
+
+<nav>
+  <a class="nav-logo" href="index.html"><img src="assets/media/logo-ask-new.png" alt="ASK"></a>
+  <div class="nav-right">
+    <span class="admin-tag">Admin</span>
+    <div class="lang-btns">
+      <button class="lang-btn active" id="btn-ar" onclick="setLang('ar')">🇪🇬</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">🇬🇧</button>
+    </div>
+    <button class="btn-logout" onclick="doLogout()">
+      <span class="ar-txt">خروج</span><span class="en-txt">Sign Out</span>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap">
+  <h1 class="page-title">
+    <span class="ar-txt">إدارة <em>العملاء</em></span>
+    <span class="en-txt">Client <em>Management</em></span>
+  </h1>
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('clients',this)">
+      <span class="ar-txt">العملاء</span><span class="en-txt">Clients</span>
+    </button>
+    <button class="tab" onclick="showTab('updates',this)">
+      <span class="ar-txt">إضافة مستجد</span><span class="en-txt">Add Update</span>
+    </button>
+    <button class="tab" onclick="showTab('documents',this)">
+      <span class="ar-txt">مستندات العملاء</span><span class="en-txt">Client Documents</span>
+    </button>
+    <button class="tab" onclick="showTab('library',this)">
+      <span class="ar-txt">المكتبة القانونية</span><span class="en-txt">Legal Library</span>
+    </button>
+  </div>
+
+  <!-- Clients Panel -->
+  <div class="panel active" id="panel-clients">
+    <div class="bar">
+      <input class="search" id="search-inp" placeholder="Search by username or client ID..." oninput="filterClients()">
+      <span class="panel-note" id="client-search-meta">
+        <span class="ar-txt">جاري تحميل العملاء...</span><span class="en-txt">Loading clients...</span>
+      </span>
+      <button class="btn btn-outline" onclick="exportCSV()">CSV</button>
+      <button class="btn btn-gold" onclick="openModal('modal-new')">
+        + <span class="ar-txt">عميل جديد</span><span class="en-txt">New Client</span>
+      </button>
+    </div>
+    <div class="workspace-shell">
+      <aside class="workspace-sidebar">
+        <div class="sidebar-head">
+          <div class="sidebar-title">
+            <span class="ar-txt">قائمة العملاء</span><span class="en-txt">Client List</span>
+          </div>
+          <div class="sidebar-copy">
+            <span class="ar-txt">افتح أي عميل لرؤية ملفاته المرسلة إليه وملفاته المرفوعة من جهته داخل نفس الواجهة.</span>
+            <span class="en-txt">Open any client to manage the files you send and review the files they have already submitted.</span>
+          </div>
+        </div>
+        <div class="client-list" id="client-list">
+          <div class="workspace-empty">
+            <strong><span class="ar-txt">جاري التحميل</span><span class="en-txt">Loading</span></strong>
+            <span class="ar-txt">نقوم الآن بجلب قائمة العملاء.</span><span class="en-txt">We are fetching the client list now.</span>
+          </div>
+        </div>
+      </aside>
+
+      <section class="workspace-main">
+        <div id="selected-client-detail">
+          <div class="workspace-empty">
+            <strong><span class="ar-txt">اختر عميلاً</span><span class="en-txt">Select a Client</span></strong>
+            <span class="ar-txt">عند اختيار عميل ستظهر هنا ملفاتك المرسلة إليه وملفاته المرفوعة للإدارة.</span>
+            <span class="en-txt">Once you pick a client, their admin files and submitted uploads will appear here.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Updates Panel -->
+  <div class="panel" id="panel-updates">
+    <div style="max-width:520px;">
+      <div class="field">
+        <label><span class="ar-txt">اختر العميل</span><span class="en-txt">Select Client</span></label>
+        <select id="upd-client"></select>
+      </div>
+      <div class="field">
+        <label><span class="ar-txt">عنوان المستجد</span><span class="en-txt">Update Title</span></label>
+        <input type="text" id="upd-title" placeholder="e.g. Defence memo submitted">
+      </div>
+      <div class="field">
+        <label><span class="ar-txt">التفاصيل</span><span class="en-txt">Details</span></label>
+        <textarea id="upd-body" placeholder="Write details here..."></textarea>
+      </div>
+      <div class="msg" id="upd-msg"></div>
+      <button class="btn btn-gold" onclick="addUpdate()">
+        <span class="ar-txt">إرسال المستجد</span><span class="en-txt">Send Update</span>
+      </button>
+    </div>
+  </div>
+  <!-- Client Documents Panel -->
+  <div class="panel" id="panel-documents">
+    <div style="max-width:520px;">
+      <p style="font-size:13px;color:var(--wd);margin-bottom:20px;">
+        <span class="ar-txt">رفع مستندات خاصة لكل عميل داخل البوابة</span>
+        <span class="en-txt">Upload private documents to the client portal</span>
+      </p>
+      <div class="field">
+        <label><span class="ar-txt">اختر العميل</span><span class="en-txt">Select Client</span></label>
+        <select id="doc-client"></select>
+      </div>
+      <div class="field">
+        <label><span class="ar-txt">عنوان المستند</span><span class="en-txt">Document Title</span></label>
+        <input type="text" id="doc-title" placeholder="e.g. Court filing / Power of attorney">
+      </div>
+      <div class="field">
+        <label><span class="ar-txt">الملف</span><span class="en-txt">File</span></label>
+        <input type="file" id="doc-file">
+      </div>
+      <div class="msg" id="doc-msg"></div>
+      <button class="btn btn-gold" onclick="uploadClientDoc()">
+        <span class="ar-txt">رفع المستند</span><span class="en-txt">Upload Document</span>
+      </button>
+    </div>
+  </div>
+  <!-- Library Panel -->
+  <div class="panel" id="panel-library">
+    <div style="max-width:520px;">
+      <p style="font-size:13px;color:var(--wd);margin-bottom:20px;">
+        <span class="ar-txt">رفع مستندات للمكتبة القانونية العامة</span>
+        <span class="en-txt">Upload documents to the public Legal Library</span>
+      </p>
+      <div class="field">
+        <label><span class="ar-txt">عنوان المستند</span><span class="en-txt">Document Title</span></label>
+        <input type="text" id="lib-title" placeholder="e.g. Companies Act 2024">
+      </div>
+      <div class="field">
+        <label><span class="ar-txt">التصنيف</span><span class="en-txt">Category</span></label>
+        <select id="lib-cat">
+          <option value="القوانين المصرية">القوانين المصرية</option>
+          <option value="أحكام محكمة النقض">أحكام محكمة النقض</option>
+          <option value="الأحكام الإدارية العليا">الأحكام الإدارية العليا</option>
+          <option value="أحكام المحكمة الدستورية">أحكام المحكمة الدستورية</option>
+          <option value="أحكام القضاء الإداري">أحكام القضاء الإداري</option>
+          <option value="صيغ العقود القانونية">صيغ العقود القانونية</option>
+          <option value="صيغ الدعاوى">صيغ الدعاوى</option>
+          <option value="كتب مرجعية">كتب مرجعية</option>
+          <option value="فتاوى الجمعية العمومية">فتاوى الجمعية العمومية</option>
+        </select>
+      </div>
+      <div class="field">
+        <label><span class="ar-txt">الملف (PDF)</span><span class="en-txt">File (PDF)</span></label>
+        <input type="file" id="lib-file" accept=".pdf">
+      </div>
+      <div class="msg" id="lib-msg"></div>
+      <button class="btn btn-gold" onclick="uploadLibDoc()">
+        <span class="ar-txt">رفع المستند</span><span class="en-txt">Upload Document</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- New Client Modal -->
+<div class="overlay" id="modal-new">
+  <div class="modal">
+    <div class="modal-title"><span class="ar-txt">إضافة عميل جديد</span><span class="en-txt">Add New Client</span></div>
+    <div class="msg" id="new-msg"></div>
+    <div class="field"><label><span class="ar-txt">اسم المستخدم *</span><span class="en-txt">Username *</span></label><input type="text" id="n-username" autocomplete="off"></div>
+    <div class="field"><label><span class="ar-txt">كلمة المرور *</span><span class="en-txt">Password *</span></label><input type="password" id="n-pass" placeholder="Minimum 8 characters"></div>
+    <div class="field"><label><span class="ar-txt">رقم الهاتف</span><span class="en-txt">Phone</span></label><input type="tel" id="n-phone"></div>
+    <p style="font-size:12px;line-height:1.7;color:var(--wf);margin-top:-4px;">
+      <span class="ar-txt">سيتم إنشاء حساب العميل باسم المستخدم وكلمة المرور فقط، ويظهر مباشرةً في قائمة العملاء مع معرّفه داخل البوابة.</span>
+      <span class="en-txt">The client account is created with username and password only, then appears immediately in the live client list with its portal ID.</span>
+    </p>
+    <div class="modal-footer">
+      <button class="btn btn-gold" onclick="createClient()"><span class="ar-txt">إنشاء الحساب</span><span class="en-txt">Create Account</span></button>
+      <button class="btn btn-outline" onclick="closeModal('modal-new')"><span class="ar-txt">إلغاء</span><span class="en-txt">Cancel</span></button>
+    </div>
+  </div>
+</div>
+
+<!-- Status Modal -->
+<div class="overlay" id="modal-status">
+  <div class="modal">
+    <div class="modal-title"><span class="ar-txt">تحديث الحالة</span><span class="en-txt">Update Status</span></div>
+    <input type="hidden" id="status-uid">
+    <div class="field">
+      <label><span class="ar-txt">الحالة</span><span class="en-txt">Status</span></label>
+      <select id="status-val">
+        <option value="active"><span class="ar-txt">نشط</span><span class="en-txt">Active</span></option>
+        <option value="inactive"><span class="ar-txt">موقوف مؤقتاً</span><span class="en-txt">On Hold</span></option>
+        <option value="closed"><span class="ar-txt">مغلق</span><span class="en-txt">Closed</span></option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-gold" onclick="updateStatus()"><span class="ar-txt">حفظ</span><span class="en-txt">Save</span></button>
+      <button class="btn btn-outline" onclick="closeModal('modal-status')"><span class="ar-txt">إلغاء</span><span class="en-txt">Cancel</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="modal-edit">
+  <div class="modal">
+    <div class="modal-title"><span class="ar-txt">تعديل بيانات العميل</span><span class="en-txt">Edit Client</span></div>
+    <div class="msg" id="edit-msg"></div>
+    <input type="hidden" id="edit-uid">
+    <div class="field"><label><span class="ar-txt">اسم المستخدم *</span><span class="en-txt">Username *</span></label><input type="text" id="edit-username" autocomplete="off"></div>
+    <div class="field"><label><span class="ar-txt">الاسم الكامل</span><span class="en-txt">Full Name</span></label><input type="text" id="edit-full-name"></div>
+    <div class="field"><label><span class="ar-txt">رقم الهاتف</span><span class="en-txt">Phone</span></label><input type="tel" id="edit-phone"></div>
+    <div class="field"><label><span class="ar-txt">رقم الملف</span><span class="en-txt">Client Number</span></label><input type="text" id="edit-client-number"></div>
+    <div class="field"><label><span class="ar-txt">نوع القضية</span><span class="en-txt">Case Type</span></label><input type="text" id="edit-case-type"></div>
+    <div class="field">
+      <label><span class="ar-txt">الحالة</span><span class="en-txt">Status</span></label>
+      <select id="edit-status">
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+        <option value="closed">Closed</option>
+      </select>
+    </div>
+    <div class="field"><label><span class="ar-txt">ملاحظات</span><span class="en-txt">Notes</span></label><textarea id="edit-notes"></textarea></div>
+    <div class="modal-footer">
+      <button class="btn btn-gold" onclick="saveClientEdit()"><span class="ar-txt">حفظ</span><span class="en-txt">Save</span></button>
+      <button class="btn btn-outline" onclick="closeModal('modal-edit')"><span class="ar-txt">إلغاء</span><span class="en-txt">Cancel</span></button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="modal-password">
+  <div class="modal">
+    <div class="modal-title"><span class="ar-txt">تغيير كلمة المرور</span><span class="en-txt">Change Password</span></div>
+    <div class="msg" id="password-msg"></div>
+    <input type="hidden" id="password-uid">
+    <div class="field"><label><span class="ar-txt">كلمة المرور الجديدة *</span><span class="en-txt">New Password *</span></label><input type="password" id="password-value" placeholder="Minimum 8 characters"></div>
+    <div class="modal-footer">
+      <button class="btn btn-gold" onclick="saveClientPassword()"><span class="ar-txt">تحديث</span><span class="en-txt">Update</span></button>
+      <button class="btn btn-outline" onclick="closeModal('modal-password')"><span class="ar-txt">إلغاء</span><span class="en-txt">Cancel</span></button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="replace-file-input" hidden>
+<div class="toast-stack" id="toast-stack"></div>
+
+<script type="module" src="assets/js/client-admin.js"></script>
+<script src="assets/js/site-responsive.js"></script>
+</body>
+</html>

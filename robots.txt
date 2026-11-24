@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /assets/
+Disallow: /client-admin.html
+Disallow: /client-portal.html
+Disallow: /reset-password.html
+Sitemap: https://www.askuniversal.com/sitemap.xml

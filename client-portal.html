@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>بوابة العملاء | ASK</title>
+<link rel="icon" href="assets/media/logo-ask-new.png">
+<link rel="stylesheet" href="assets/css/site-typography.css">
+<link rel="stylesheet" href="assets/css/site-responsive.css">
+<link rel="stylesheet" href="assets/css/portal.css">
+</head>
+<body class="portal-body">
+
+<nav class="portal-nav">
+  <div class="portal-nav-logo">
+    <img src="assets/media/logo-ask-new.png" alt="ASK">
+  </div>
+  <div class="portal-nav-right">
+    <span class="nav-pill" id="nav-name">—</span>
+    <span class="nav-pill" id="nav-num">—</span>
+    <button class="lang-btn" id="btn-ar" type="button" onclick="setLang('ar')">AR</button>
+    <button class="lang-btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
+    <a class="btn btn-ghost" href="reset-password.html">
+      <span class="ar-txt">كلمة المرور</span>
+      <span class="en-txt">Password</span>
+    </a>
+    <button class="btn btn-danger" type="button" onclick="doLogout()">
+      <span class="ar-txt">خروج</span>
+      <span class="en-txt">Sign Out</span>
+    </button>
+  </div>
+</nav>
+
+<div class="portal-main">
+
+  <div class="state-card" id="loading">
+    <p>
+      <span class="ar-txt">جارٍ تحميل بوابتك...</span>
+      <span class="en-txt">Loading your portal...</span>
+    </p>
+  </div>
+
+  <div class="state-card" id="error-state">
+    <p id="error-copy"></p>
+    <div style="display:flex;gap:.6rem;justify-content:center;margin-top:var(--space-md);">
+      <button class="btn btn-primary" type="button" onclick="location.reload()">
+        <span class="ar-txt">إعادة المحاولة</span><span class="en-txt">Retry</span>
+      </button>
+      <button class="btn btn-ghost" type="button" onclick="doLogout()">
+        <span class="ar-txt">تسجيل الخروج</span><span class="en-txt">Sign Out</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="state-card" id="content">
+    <div class="hero">
+      <span class="status-badge" id="status-badge"></span>
+      <h1>
+        <span class="ar-txt">أهلًا بك في بوابتك</span>
+        <span class="en-txt">Welcome to your portal</span>
+      </h1>
+      <p>
+        <span class="ar-txt">تابع مستجدات قضيتك، ملفاتك، ومستنداتك المرسلة من فريق ASK.</span>
+        <span class="en-txt">Track your case updates, files, and documents shared by the ASK team.</span>
+      </p>
+    </div>
+
+    <div class="summary-grid">
+      <div class="stat-card">
+        <div class="stat-label"><span class="ar-txt">الاسم</span><span class="en-txt">Name</span></div>
+        <div class="stat-value" id="c-name">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label"><span class="ar-txt">نوع القضية</span><span class="en-txt">Case Type</span></div>
+        <div class="stat-value" id="c-case-type">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label"><span class="ar-txt">الهاتف</span><span class="en-txt">Phone</span></div>
+        <div class="stat-value" id="c-phone">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label"><span class="ar-txt">آخر تحديث</span><span class="en-txt">Last Update</span></div>
+        <div class="stat-value" id="c-last-update">—</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        <h2><span class="ar-txt">مستجدات القضية</span><span class="en-txt">Case Updates</span></h2>
+        <span class="nav-pill" id="updates-count-pill">0</span>
+      </div>
+      <div id="updates-list"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        <h2><span class="ar-txt">ملفات من الإدارة</span><span class="en-txt">Files From Admin</span></h2>
+        <span class="nav-pill" id="admin-files-count-pill">0</span>
+      </div>
+      <div id="admin-files-list"></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">
+        <h2><span class="ar-txt">رفع مستنداتي</span><span class="en-txt">Upload Your Documents</span></h2>
+        <span class="nav-pill" id="client-uploads-count-pill">0</span>
+      </div>
+      <label class="upload-zone" id="client-upload-zone" for="client-upload-input">
+        <span class="ar-txt">اسحب الملف هنا أو اضغط للاختيار</span>
+        <span class="en-txt">Drag a file here or click to choose one</span>
+        <input type="file" id="client-upload-input">
+      </label>
+      <div id="client-uploads-list"></div>
+    </div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toast-stack"></div>
+
+<script type="module" src="assets/js/client-portal.js"></script>
+<script src="assets/js/site-responsive.js"></script>
+</body>
+</html>

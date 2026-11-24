@@ -1,0 +1,333 @@
+:root{
+  --ask-type-family:"Alexandria","Segoe UI","Tahoma",sans-serif;
+  --ask-type-display-family:"Amiri","Noto Naskh Arabic","Times New Roman",serif;
+  --ask-type-latin-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --ask-type-size-base:1rem;
+  --ask-type-size-display:clamp(2.25rem, 4vw, 3.25rem);
+  --ask-type-size-heading:clamp(1.5rem, 2.75vw, 2.125rem);
+  --ask-type-size-title:clamp(1.125rem, 2.2vw, 1.5rem);
+  --ask-type-size-copy:1rem;
+  --ask-type-size-number-sm:1.25rem;
+  --ask-type-size-number-md:1.625rem;
+  --ask-type-size-number-lg:clamp(2rem,4vw,3rem);
+  --ask-type-size-number-xl:clamp(2.5rem,5vw,4rem);
+  --ask-type-line-height:1.75;
+  --ask-type-line-height-tight:1.2;
+  --ask-type-letter-spacing:0.02em;
+  --ask-type-letter-spacing-tight:0.01em;
+  --ask-space-sm:0.75rem;
+  --ask-space-md:1rem;
+  --ask-space-lg:1.5rem;
+}
+
+html{
+  font-size:16px;
+  -webkit-text-size-adjust:100%;
+}
+
+body.ask-public-site{
+  font-family:var(--ask-type-family) !important;
+  font-size:var(--ask-type-size-base) !important;
+  line-height:var(--ask-type-line-height) !important;
+  color:#F2F1EE !important;
+}
+
+html body.ask-public-site,
+html body.ask-public-site *{
+  font-family:var(--ask-type-family) !important;
+}
+
+body.ask-public-site :is(
+  p,
+  a,
+  li,
+  label,
+  input,
+  select,
+  textarea,
+  button,
+  td,
+  th,
+  small,
+  figcaption,
+  summary,
+  legend,
+  blockquote
+){
+  font-size:inherit;
+  line-height:inherit;
+  letter-spacing:normal !important;
+  word-spacing:normal !important;
+}
+
+body.ask-public-site p,
+body.ask-public-site blockquote{
+  color:#D3D3D3 !important;
+  line-height:1.8 !important;
+  margin-block:0 1rem !important;
+  text-shadow:none !important;
+}
+
+body.ask-public-site :is(.hero-desc,.page-desc,.about-text,.service-desc,.practice-intro,.si-desc,.value-desc,.exp-desc,.contact-sub,.form-sub,.info-sub,.off-addr){
+  max-width:68ch;
+  font-size:var(--ask-type-size-copy) !important;
+  line-height:1.8 !important;
+}
+
+body.ask-public-site :is(.section-tag,.page-eyebrow,.hero-eyebrow,.practice-tag,.chain-eyebrow){
+  font-size:0.875rem !important;
+  font-weight:600 !important;
+  line-height:1.5 !important;
+  letter-spacing:0.04em !important;
+}
+
+body.ask-public-site li{
+  line-height:1.75 !important;
+}
+
+body.ask-public-site :is(.nav-brand, .nav-logo, .nb){
+  display:inline-flex;
+  align-items:center;
+  min-width:0;
+  line-height:0;
+}
+
+body.ask-public-site :is(.nav-brand-logo, .nav-logo img, .brand-logo, .nb img){
+  display:block;
+  width:auto !important;
+  max-width:min(22rem, 44vw) !important;
+  height:clamp(2.75rem, 8vw, 5.75rem) !important;
+  max-height:clamp(2.75rem, 8vw, 5.75rem) !important;
+  margin:0 !important;
+  object-fit:contain;
+}
+
+body.ask-public-site :is(h1,h2,h3,h4,h5,h6){
+  font-family:var(--ask-type-display-family) !important;
+  line-height:var(--ask-type-line-height-tight) !important;
+  letter-spacing:normal !important;
+  margin:0 0 0.75em !important;
+  color:#F7F5F1 !important;
+}
+
+body.ask-public-site :is(
+  .hero-title,
+  .page-title,
+  .section-title,
+  .hero-name,
+  .founder-name,
+  .footer-partner-name,
+  .service-name,
+  .practice-name-ar,
+  .value-name,
+  .exp-name,
+  .off-city,
+  .contact-headline,
+  .cta-title,
+  .chain-title,
+  .gallery-caption-title,
+  .info-title,
+  .form-title,
+  .off-title,
+  .fb-name,
+  .fb-sub
+){
+  font-family:var(--ask-type-display-family) !important;
+  font-style:normal !important;
+  letter-spacing:normal !important;
+}
+
+body.ask-public-site :is(.en,[dir="ltr"],.ltr-text){
+  font-family:var(--ask-type-latin-family) !important;
+}
+
+body.ask-public-site :is(.num,.stat-num,.service-num,.hero-stat-num,.practice-num,.hstat-num,.value-num,.services-count,.wcn,.ch-num,.nav-num,.td-num,.pillar-num,.si-num,.exp-num,.method-step-num,.step-num,.phase-number,.milestone-year,.snapshot-count,.section-count,.count-pill,.count-badge,.nav-index,[class*="num"],[class*="count"],[class*="year"],[class*="index"]){
+  font-family:var(--ask-type-latin-family) !important;
+  font-variant-numeric:tabular-nums;
+}
+
+html[lang="en"] body.ask-public-site :is(h1,h2,h3,h4,h5,h6,.hero-title,.page-title,.section-title,.hero-name,.founder-name,.service-name,.practice-name-ar,.value-name,.exp-name,.off-city,.contact-headline,.cta-title,.chain-title,.gallery-caption-title,.info-title,.form-title,.off-title){
+  font-family:var(--ask-type-latin-family) !important;
+}
+
+body.ask-public-site h1{
+  font-size:var(--ask-type-size-display) !important;
+  font-weight:700 !important;
+}
+
+body.ask-public-site h2{
+  font-size:var(--ask-type-size-heading) !important;
+  font-weight:700 !important;
+}
+
+body.ask-public-site :is(h3,h4,h5,h6){
+  font-size:var(--ask-type-size-title) !important;
+  font-weight:700 !important;
+}
+
+body.ask-public-site :is(.hero-title,.page-title,.hero-name,.contact-headline,.cta-title){
+  font-size:var(--ask-type-size-display) !important;
+  line-height:1.25 !important;
+  font-weight:700 !important;
+}
+
+body.ask-public-site :is(.section-title,.form-title,.info-title,.off-title){
+  font-size:var(--ask-type-size-heading) !important;
+  line-height:1.35 !important;
+  font-weight:700 !important;
+}
+
+body.ask-public-site :is(label){
+  display:block;
+  margin:0 0 var(--ask-space-sm) !important;
+  font-weight:700 !important;
+}
+
+body.ask-public-site :is(
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea
+){
+  font-size:var(--ask-type-size-copy) !important;
+  line-height:var(--ask-type-line-height) !important;
+  padding:0.875rem 1rem !important;
+  margin:0 0 var(--ask-space-md) !important;
+}
+
+body.ask-public-site :is(
+  button,
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .btn-danger,
+  .nav-cta,
+  .nc,
+  .bg,
+  .bb,
+  .lang-btn,
+  .lb,
+  .text-link,
+  .filter-btn
+){
+  font-size:var(--ask-type-size-copy) !important;
+  line-height:1.4 !important;
+  letter-spacing:var(--ask-type-letter-spacing) !important;
+}
+
+body.ask-public-site :is(
+  .num,
+  .stat-num,
+  .service-num,
+  .hero-stat-num,
+  .practice-num,
+  .hstat-num,
+  .value-num,
+  .services-count,
+  .wcn
+){
+  font-size:var(--ask-type-size-number-xl) !important;
+  line-height:1 !important;
+  font-weight:700 !important;
+  letter-spacing:0 !important;
+}
+
+body.ask-public-site :is(
+  .ch-num,
+  .nav-num,
+  .td-num,
+  .pillar-num,
+  .si-num,
+  .exp-num,
+  .method-step-num,
+  .step-num,
+  .phase-number,
+  .milestone-year,
+  .snapshot-count,
+  .section-count,
+  .count-pill,
+  .count-badge,
+  .nav-index
+){
+  font-size:var(--ask-type-size-number-md) !important;
+  line-height:1.1 !important;
+  font-weight:700 !important;
+  letter-spacing:0.01em !important;
+}
+
+body.ask-public-site :is(
+  [class*="num"],
+  [class*="count"],
+  [class*="index"],
+  [class*="year"],
+  [class*="stat"]
+){
+  font-weight:700 !important;
+}
+
+html[lang="ar"] body.ask-public-site :is(
+  p,
+  a,
+  li,
+  label,
+  input,
+  select,
+  textarea,
+  button,
+  td,
+  th,
+  small,
+  figcaption,
+  summary,
+  legend,
+  blockquote,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+){
+  letter-spacing:0 !important;
+}
+
+body.ask-public-site :is(strong,b){
+  font-weight:700 !important;
+}
+
+body.ask-public-site :is(em,i){
+  color:inherit !important;
+  font-style:normal !important;
+}
+
+html body.ask-public-site,
+html body.ask-public-site *{
+  text-shadow:none !important;
+}
+
+html body.ask-public-site :is(
+  h1,h2,h3,h4,h5,h6,
+  .hero-title,.page-title,.section-title,.hero-name,.founder-name,
+  .service-name,.service-name-en,.practice-name-ar,.practice-name-en,
+  .value-name,.exp-name,.off-city,.contact-headline,.cta-title,
+  .chain-title,.gallery-caption-title,.info-title,.form-title,.off-title
+){
+  color:#F7F5F1 !important;
+  text-shadow:0 0 0.8rem rgba(247,245,241,0.3) !important;
+}
+
+html body.ask-public-site :is(
+  h1,h2,h3,h4,h5,h6,
+  .hero-title,.page-title,.section-title,.hero-name,.founder-name,
+  .service-name,.service-name-en,.practice-name-ar,.practice-name-en,
+  .value-name,.exp-name,.off-city,.contact-headline,.cta-title,
+  .chain-title,.gallery-caption-title,.info-title,.form-title,.off-title
+) :is(em,i,strong,b){
+  color:inherit !important;
+  text-shadow:0 0 0.8rem rgba(247,245,241,0.3) !important;
+}
+
+body.ask-public-site :is(.num,.stat-num,.service-num,.hero-stat-num,.practice-num,.hstat-num,.value-num,.services-count,.wcn,.ch-num,.nav-num,.td-num,.pillar-num,.si-num,.exp-num,.method-step-num,.step-num,.phase-number,.milestone-year,.snapshot-count,.section-count,.count-pill,.count-badge,.nav-index){
+  color:#E52330 !important;
+  text-shadow:0 0 0.6rem rgba(229,35,48,0.25) !important;
+}
