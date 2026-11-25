@@ -148,6 +148,7 @@
     nav.innerHTML = [
       '<a class="site-main-logo" href="index.html" aria-label="ASK home">',
       '  <img class="site-main-logo-image" src="assets/media/logo-ask-new.png" alt="ASK Legal Advisors and Law Firm">',
+      '  <img class="site-main-signature" src="assets/media/ask-partners-signature.webp" alt="عمرو سعيد قطب — علاء كمال يونس · مستشارون ومحامون ومحكمون">',
       '</a>',
       '<ul class="nav-links">',
       navItems.map(function(item){ return publicNavItem(item, activeKey); }).join(''),

@@ -92,3 +92,24 @@ html:root{
   --surface-elevated:rgba(17,26,46,.9);
   --surface-strong:rgba(11,18,32,.96);
 }
+
+/* Header: ASK logo + partners signature side by side */
+#nav.site-main-nav .site-main-logo{
+  gap: clamp(0.5rem, 1.2vw, 1rem);
+  overflow: visible;
+}
+#nav.site-main-nav .site-main-signature{
+  display: block;
+  width: clamp(9rem, 17vw, 16rem);
+  height: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+@media (max-width: 40rem){
+  #nav.site-main-nav .site-main-signature{
+    width: min(40vw, 9rem);
+  }
+}
+@media (max-width: 22rem){
+  #nav.site-main-nav .site-main-signature{ display: none; }
+}
