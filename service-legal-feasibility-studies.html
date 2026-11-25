@@ -188,6 +188,7 @@ window.addEventListener('scroll',()=>{document.getElementById('nav').style.borde
 const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting){setTimeout(()=>en.target.classList.add('visible'),i*50);obs.unobserve(en.target);}});},{threshold:.07});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<script src="assets/js/ask-contact.js"></script>
 <script src="assets/js/site-responsive.js"></script>
 </body>
 </html>

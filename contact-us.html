@@ -102,14 +102,16 @@ textarea{resize:vertical;min-height:120px;line-height:1.6;}
 .off-tag::before{content:'';width:32px;height:1px;background:var(--gold-faint);}
 .off-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(32px,4vw,52px);font-weight:300;color:var(--white);margin-bottom:48px;}
 .off-title em{font-style:italic;color:var(--gold);}
-.offices-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);}
+.offices-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
 .off-card{background:var(--black);padding:36px 28px;position:relative;overflow:hidden;transition:background 0.3s;}
 .off-card:hover{background:var(--black-light);}
 .off-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height 0.4s ease;}
 .off-card:hover::before{height:100%;}
 .off-country{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-faint);margin-bottom:14px;}
 .off-city{font-family:'Noto Kufi Arabic',sans-serif;font-size:22px;font-weight:600;color:var(--gold);margin-bottom:14px;}
-.off-addr{font-size:11px;color:var(--white-dim);line-height:1.75;margin-bottom:14px;}
+.off-phone{display:inline-block;font-size:14px;font-weight:600;color:var(--gold);text-decoration:none;}
+.off-phone:hover,.off-addr:hover{color:var(--gold-light);}
+.off-addr{display:block;text-decoration:none;font-size:13px;color:var(--white-dim);line-height:1.75;margin-bottom:14px;}
 .off-tel{font-size:11px;color:var(--gold-dim);text-decoration:none;transition:color 0.2s;display:block;}
 .off-tel:hover{color:var(--gold);}
 footer{border-top:1px solid var(--border);padding:40px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
@@ -216,8 +218,7 @@ body,body *{font-family:"Inter","IBM Plex Sans Arabic","Helvetica Neue",Arial,sa
           <option value=""><span class="en">Any office</span><span class="ar">أي مكتب</span></option>
           <option value="cairo"><span class="en">Cairo — Egypt (Headquarters)</span><span class="ar">القاهرة — مصر (المقر الرئيسي)</span></option>
           <option value="alexandria"><span class="en">Alexandria — Egypt</span><span class="ar">الإسكندرية — مصر</span></option>
-          <option value="dubai"><span class="en">Dubai — UAE</span><span class="ar">دبي — الإمارات</span></option>
-          <option value="heidelberg"><span class="en">Heidelberg — Germany</span><span class="ar">هايدلبرغ — ألمانيا</span></option>
+          <option value="uk"><span class="en">Stockton-on-Tees — United Kingdom</span><span class="ar">المملكة المتحدة</span></option>
         </select>
       </div>
       <div class="form-group"><label for="ms"><span class="en">Your Message</span><span class="ar">رسالتك</span></label><textarea id="ms" name="message" placeholder="Please briefly describe your legal matter..." required></textarea></div>
@@ -231,17 +232,25 @@ body,body *{font-family:"Inter","IBM Plex Sans Arabic","Helvetica Neue",Arial,sa
     <h2 class="info-title"><span class="en">Contact <em>Information</em></span><span class="ar">معلومات <em>التواصل</em></span></h2>
     <p class="info-sub"><span class="en">Reach us directly through any of the channels below for confidential legal support.</span><span class="ar">تواصل معنا مباشرةً عبر أي من القنوات أدناه للحصول على دعم قانوني سري ومهني.</span></p>
 
-    <a class="channel ch-email" href="mailto:amr@askuniversal.com">
+    <a class="channel ch-email" data-ask-href="emailGeneral" href="mailto:hello@askuniversal.com">
       <div class="ch-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-      <div><span class="ch-lbl"><span class="en">Email — Founder</span><span class="ar">البريد الإلكتروني — المؤسس</span></span><span class="ch-val">amr@askuniversal.com</span></div>
+      <div><span class="ch-lbl"><span class="en">Email — General Enquiries</span><span class="ar">البريد الإلكتروني — الاستفسارات</span></span><span class="ch-val" dir="ltr" data-ask-text="emailGeneral">hello@askuniversal.com</span></div>
     </a>
-    <a class="channel" href="tel:+201006635664">
+    <a class="channel ch-email" data-ask-href="emailFounder" href="mailto:amr@askuniversal.com">
+      <div class="ch-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+      <div><span class="ch-lbl"><span class="en">Email — Founder</span><span class="ar">البريد الإلكتروني — المؤسس</span></span><span class="ch-val" dir="ltr" data-ask-text="emailFounder">amr@askuniversal.com</span></div>
+    </a>
+    <a class="channel" data-ask-href="phoneEgypt" href="tel:+201003969395">
       <div class="ch-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.33 2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-      <div><span class="ch-lbl"><span class="en">Cairo Headquarters</span><span class="ar">المقر الرئيسي — القاهرة</span></span><span class="ch-val">+20 10 0663 5664</span></div>
+      <div><span class="ch-lbl"><span class="en">Calling in Egypt</span><span class="ar">الاتصال من داخل مصر</span></span><span class="ch-val" dir="ltr" data-ask-text="phoneEgypt">+20 100 396 9395</span></div>
     </a>
-    <a class="channel ch-whatsapp" href="https://wa.me/201006635664" target="_blank" rel="noopener noreferrer">
+    <a class="channel" data-ask-href="phoneAbroad" href="tel:+447883450801">
+      <div class="ch-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.33 2 2 0 0 1 3.6 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.27-.85a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <div><span class="ch-lbl"><span class="en">Calling from outside Egypt</span><span class="ar">الاتصال من خارج مصر</span></span><span class="ch-val" dir="ltr" data-ask-text="phoneAbroad">+44 7883 450801</span></div>
+    </a>
+    <a class="channel ch-whatsapp" data-ask-href="whatsapp" href="https://wa.me/201006635664" target="_blank" rel="noopener noreferrer">
       <div class="ch-icon"><svg class="fill-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.768.966-.941 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.787-1.48-1.759-1.653-2.056-.173-.298-.019-.459.13-.608.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.52-.075-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.075-.792.372-.272.298-1.04 1.016-1.04 2.478 0 1.462 1.065 2.875 1.214 3.074.149.198 2.099 3.2 5.077 4.487.709.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347Z"/><path d="M20.52 3.449A11.815 11.815 0 0 0 12.004.001C5.495.001.201 5.294.2 11.803a11.79 11.79 0 0 0 1.611 5.955L.001 24l6.405-1.676a11.826 11.826 0 0 0 5.596 1.429h.005c6.509 0 11.804-5.294 11.804-11.803a11.79 11.79 0 0 0-3.291-8.501Zm-8.516 18.31h-.004a9.86 9.86 0 0 1-5.026-1.378l-.36-.214-3.8.995 1.014-3.703-.234-.379a9.86 9.86 0 0 1-1.51-5.277c.002-5.441 4.43-9.869 9.875-9.869a9.81 9.81 0 0 1 6.983 2.893 9.825 9.825 0 0 1 2.887 6.996c-.003 5.441-4.43 9.869-9.875 9.869Z"/></svg></div>
-      <div><span class="ch-lbl">WhatsApp</span><span class="ch-val">+20 10 0663 5664</span></div>
+      <div><span class="ch-lbl">WhatsApp</span><span class="ch-val" dir="ltr" data-ask-text="whatsapp">+20 100 663 5664</span></div>
     </a>
     <a class="channel ch-linkedin" href="https://www.linkedin.com/company/askuniversal/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
       <div class="ch-icon"><svg class="fill-icon" viewBox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 7.06A1.97 1.97 0 1 0 5.2 3.12a1.97 1.97 0 0 0 .05 3.94ZM20 12.82c0-3.46-1.85-5.07-4.32-5.07-1.99 0-2.88 1.1-3.37 1.87V8.5H8.94c.04.74 0 11.5 0 11.5h3.37v-6.42c0-.34.03-.68.12-.93.27-.68.88-1.38 1.9-1.38 1.34 0 1.88 1.03 1.88 2.54V20H20v-7.18Z"/></svg></div>
@@ -259,7 +268,7 @@ body,body *{font-family:"Inter","IBM Plex Sans Arabic","Helvetica Neue",Arial,sa
       <div class="ch-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v10"/><path d="M7 12h10"/><path d="M8.5 8.5c2 1.3 4.9 1.3 7 0"/><path d="M8.5 15.5c2-1.3 4.9-1.3 7 0"/></svg></div>
       <div><span class="ch-lbl">UN Global Compact</span><span class="ch-val">Official Participant Profile</span></div>
     </a>
-    <a class="channel" href="https://www.google.com/maps/search/?api=1&query=G-705+Marriott+Residence+Towers,+Al-Thawra+St,+Heliopolis,+Cairo+11575,+Egypt" target="_blank" rel="noopener noreferrer">
+    <a class="channel" data-ask-href="mapsHq" href="https://www.google.com/maps/search/?api=1&query=Villa%20111%2C%20Street%2012%2C%20First%20District%2C%20Fifth%20Settlement%2C%20New%20Cairo%2011477%2C%20Egypt" target="_blank" rel="noopener noreferrer">
       <div class="ch-icon"><svg viewBox="0 0 24 24"><path d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
       <div><span class="ch-lbl">Google Maps</span><span class="ch-val"><img class="inline-brand-logo" src="assets/media/logo-ask-new.png" alt=""> Cairo Office</span></div>
     </a>
@@ -269,16 +278,10 @@ body,body *{font-family:"Inter","IBM Plex Sans Arabic","Helvetica Neue",Arial,sa
 
 <div class="offices-wrap">
   <div class="offices-inner">
-    <div class="offices-grid">
-      <div class="off-card reveal">
-        <img src="assets/media/CONTACT3 (2).png" alt="Cairo Office" style="width: 100%; height: auto; border-radius: 8px;">
-      </div>
-      <div class="off-card reveal" style="transition-delay:0.1s">
-        <img src="assets/media/CONTACT1.png" alt="Alexandria Office" style="width: 100%; height: auto; border-radius: 8px;">
-      </div>
-      <div class="off-card reveal" style="transition-delay:0.2s">
-        <img src="assets/media/CONTACT3 (1).png" alt="United Kingdom Office" style="width: 100%; height: auto; border-radius: 8px;">
-      </div>
+    <div class="offices-grid" data-ask-offices>
+      <div class="off-card"><div class="off-city"><span class="ar">القاهرة — المقر الرئيسي</span><span class="en">Cairo — Headquarters</span></div><span class="off-addr" dir="ltr">Villa 111, Street 12, First District, Fifth Settlement, New Cairo 11477, Egypt</span></div>
+      <div class="off-card"><div class="off-city"><span class="ar">الإسكندرية</span><span class="en">Alexandria</span></div><span class="off-addr" dir="ltr">123 El Tayaran Towers, El Mamoura El Shati, Alexandria, Egypt</span></div>
+      <div class="off-card"><div class="off-city"><span class="ar">المملكة المتحدة</span><span class="en">United Kingdom</span></div><span class="off-addr" dir="ltr">18 Hanover Point, Norton, Stockton-on-Tees, TS20 1RA, United Kingdom</span></div>
     </div>
   </div>
 </div>
@@ -295,6 +298,7 @@ const obs=new IntersectionObserver((entries)=>{
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 <script type="module" src="assets/js/contact-form.js"></script>
+<script src="assets/js/ask-contact.js"></script>
 <script src="assets/js/site-responsive.js"></script>
 </body>
 </html>

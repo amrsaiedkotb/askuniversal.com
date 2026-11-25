@@ -432,6 +432,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 function setLang(l){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('ask-lang',l);}catch(e){}window.syncSiteNavLanguageButtons&&window.syncSiteNavLanguageButtons();}
 try{setLang(localStorage.getItem('ask-lang')||'ar');}catch(e){setLang('ar');}
 </script>
+<script src="assets/js/ask-contact.js"></script>
 <script src="assets/js/site-responsive.js"></script>
 </body>
 </html>

@@ -1477,7 +1477,7 @@ body.menu-open .site-whatsapp-float{
   }
 
   .offices-grid{
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .hero-stats-grid,

@@ -139,8 +139,8 @@ html[lang=en]{direction:ltr;} html[lang=ar]{direction:rtl;}
     <h3><span class="ar">محتاج تبدأ إجراء إلكتروني؟</span><span class="en">Need to start an online proceeding?</span></h3>
     <p><span class="ar">تواصل معنا الآن وابدأ خطوتك القانونية عن بُعد.</span><span class="en">Get in touch now and take your legal step remotely.</span></p>
     <div class="btns">
-      <a class="btn" href="https://wa.me/201111117676" target="_blank" rel="noopener noreferrer"><span class="ar">واتساب مباشر</span><span class="en">WhatsApp</span></a>
-      <a class="btn" href="tel:+201111117676"><span dir="ltr">01111117676</span></a>
+      <a class="btn" data-ask-href="whatsapp" href="https://wa.me/201006635664" target="_blank" rel="noopener noreferrer"><span class="ar">واتساب مباشر</span><span class="en">WhatsApp</span></a>
+      <a class="btn" data-ask-href="phoneEgypt" href="tel:+201003969395"><span dir="ltr" data-ask-text="phoneEgypt">+20 100 396 9395</span></a>
     </div>
   </div>
 </div>
@@ -387,6 +387,7 @@ function setLang(l){
 try{ setLang(localStorage.getItem('ask-lang') || 'ar'); }catch(e){ setLang('ar'); }
 renderEntities();
 </script>
+<script src="assets/js/ask-contact.js"></script>
 <script src="assets/js/site-responsive.js"></script>
 </body>
 </html>

@@ -96,8 +96,8 @@ if (form) {
       setStatus(
         "err",
         t(
-          "تعذر إرسال الرسالة الآن. يمكنك مراسلتنا مباشرة على amr@askuniversal.com أو clientaccess@askuniversal.com.",
-          "The message could not be sent right now. You can email us directly at amr@askuniversal.com or clientaccess@askuniversal.com.",
+          "تعذر إرسال الرسالة الآن. يمكنك مراسلتنا مباشرة على hello@askuniversal.com أو amr@askuniversal.com.",
+          "The message could not be sent right now. You can email us directly at hello@askuniversal.com or amr@askuniversal.com.",
         ),
       );
     } finally {
