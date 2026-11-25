@@ -296,3 +296,36 @@ html body.ask-public-site .practice-name-ar *{
 html body .page-bg{ background-position: center 52% !important; background-size: cover !important; }
 html body .page-bg::after{ background: rgba(6,12,24,.45) !important; }
 @media (orientation: portrait){ html body .page-bg{ background-position: center 60% !important; } }
+
+/* =========================================================
+   Let the background image show everywhere:
+   section wrappers fully transparent, all boxes translucent
+   ========================================================= */
+html body.ask-public-site :is(section.hero, div.hero, section.section, .services-wrap, .contact-strip, .values-wrap,
+  .cta-section, .practice-section, .offices-wrap, .who-we-are > div, .methodology-wrap, .chain-banner){
+  background: transparent !important;
+  background-image: none !important;
+}
+html body.ask-public-site :is(.service-panel, .service-panel.active, .expertise-grid, .services-list, .about-pillars){
+  background: transparent !important;
+}
+html body.ask-public-site :is(.mb, .academy-link-card, .cta-box, .form-side, .info-side, .subject-header, .un-global-card){
+  background: linear-gradient(180deg, rgba(12,18,32,.62), rgba(12,18,32,.42)) !important;
+  border: 1px solid rgba(200,164,93,.3) !important;
+  border-radius: 22px !important;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+/* Cards a bit more see-through so the pyramids show behind them */
+html body :is(.stat-item,.pillar,.service-card,.service-item,.hstat,.value-card,.exp-item,.off-card,
+  .lib-card,.year-link,.subject-card,.resource-card,.entity,.phase-block,.sc,.wc,.hc,.card,.info-card,.side-card){
+  background: linear-gradient(180deg, rgba(12,18,32,.62), rgba(12,18,32,.42)) !important;
+}
+html body.ask-public-site textarea, html body.ask-public-site input, html body.ask-public-site select{
+  background: rgba(11,18,32,.6) !important;
+}
+/* Primary buttons: gold fill, navy text (was rendering as an empty outline) */
+html body.ask-public-site .btn-primary{
+  background: #C8A45D !important; color: #0B1220 !important; border-color: #C8A45D !important;
+}
+html body.ask-public-site .btn-primary *{ color: #0B1220 !important; }
+html body.ask-public-site .btn-primary:hover{ background: #E0C078 !important; }

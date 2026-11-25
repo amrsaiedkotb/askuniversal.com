@@ -75,7 +75,7 @@ if (form) {
 
     const optionLabel = (sel, fallback) => {
       const raw = form.querySelector(`${sel} option:checked`)?.textContent?.trim() || fallback;
-      return String(raw || "").replace(/([A-Za-z)\]&.])\s*([\u0600-\u06FF])/, "$1 — $2");
+      return String(raw || "");
     };
     const serviceLabel = optionLabel("#sv", service);
     const officeLabel = optionLabel("#of", preferredOffice);
