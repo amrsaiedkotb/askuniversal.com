@@ -1,1 +1,0 @@
-console.log("ASK Universal site loaded");

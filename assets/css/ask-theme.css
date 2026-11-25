@@ -1,0 +1,94 @@
+/* ASK — unified theme (colors + typography). Loaded last on every public page. */
+html:root{
+  /* Palette: navy + gold, matching the magazine "الميزان المستقيم" */
+  --ask-navy-900:#0B1220;
+  --ask-navy-800:#111A2E;
+  --ask-navy-700:#18233A;
+  --ask-navy-600:#26324D;
+  --ask-gold:#C8A45D;
+  --ask-gold-light:#E0C078;
+  --ask-gold-dim:#B8934A;
+  --ask-gold-faint:#9C7D3C;
+  --ask-ivory:#F5F3EE;
+  --ask-ivory-dim:#B9BDC8;
+  --ask-ivory-faint:#7C8396;
+  --ask-red:#E0242F;
+
+  /* Legacy short names used by page styles */
+  --g:var(--ask-gold);--gl:var(--ask-gold-light);--gd:var(--ask-gold-dim);--gf:var(--ask-gold-faint);
+  --bk:var(--ask-navy-900);--bm:var(--ask-navy-800);--bl:var(--ask-navy-700);--br:var(--ask-navy-600);
+  --bg:rgba(200,164,93,.2);--w:var(--ask-ivory);--wd:var(--ask-ivory-dim);--wf:var(--ask-ivory-faint);
+  /* Legacy long names */
+  --gold:var(--ask-gold);--gold-light:var(--ask-gold-light);--gold-dim:var(--ask-gold-dim);--gold-faint:var(--ask-gold-faint);
+  --black:var(--ask-navy-900);--black-mid:var(--ask-navy-800);--black-light:var(--ask-navy-700);
+  --border:var(--ask-navy-600);--border-gold:rgba(200,164,93,.2);
+  --white:var(--ask-ivory);--white-dim:var(--ask-ivory-dim);--white-faint:var(--ask-ivory-faint);
+
+  /* Typography: one heading face + one text face for the whole site */
+  --ask-type-family:"IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;
+  --ask-type-display-family:"Noto Kufi Arabic","IBM Plex Sans Arabic",sans-serif;
+  --ask-type-latin-family:"IBM Plex Sans Arabic","Segoe UI",Arial,sans-serif;
+}
+
+html body{
+  background-color:var(--ask-navy-900);
+  color:var(--ask-ivory);
+}
+
+html body.ask-public-site,
+html body.ask-public-site *{
+  font-family:var(--ask-type-family) !important;
+}
+
+html body.ask-public-site :is(h1,h2,h3,h4,.hti,.st,.page-title,.hero-title,.section-title,.sec-title,.nb-name){
+  font-family:var(--ask-type-display-family) !important;
+  font-style:normal !important;
+  letter-spacing:0 !important;
+}
+
+html body.ask-public-site :is(h1,h2,h3,.hti,.hero-title,.page-title){
+  color:var(--ask-ivory);
+}
+
+html body.ask-public-site p,
+html body.ask-public-site blockquote{
+  color:#D5D8E0 !important;
+}
+
+/* Buttons and links share one gold accent */
+html body.ask-public-site a:not([class]):hover{color:var(--ask-gold-light);}
+html body.ask-public-site ::selection{background:var(--ask-gold);color:var(--ask-navy-900);}
+
+/* Shared header and footer surfaces */
+html body.ask-public-site :is(nav#nav,.site-main-nav){
+  background:rgba(11,18,32,.94) !important;
+  border-bottom:1px solid rgba(200,164,93,.18) !important;
+}
+html body.ask-public-site footer{
+  background:var(--ask-navy-800) !important;
+  border-top:1px solid rgba(200,164,93,.18) !important;
+}
+
+/* Cards and panels: same surface, border and radius everywhere */
+html body.ask-public-site :is(.hc,.card,.service-card,.lib-card,.info-card,.side-card,.sc){
+  background:var(--ask-navy-800);
+  border-color:rgba(200,164,93,.22) !important;
+  border-radius:14px;
+}
+
+/* Form fields */
+html body.ask-public-site :is(input,select,textarea){
+  background:var(--ask-navy-800);
+  border-color:var(--ask-navy-600);
+  color:var(--ask-ivory);
+}
+html body.ask-public-site :is(input,select,textarea):focus{
+  border-color:var(--ask-gold) !important;
+  outline:none;
+}
+
+/* Shared surface tokens from site-responsive.css */
+html:root{
+  --surface-elevated:rgba(17,26,46,.9);
+  --surface-strong:rgba(11,18,32,.96);
+}

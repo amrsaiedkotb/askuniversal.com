@@ -234,7 +234,7 @@ function renderDocs(title, docs) {
       fileBadge.style.height = "24px";
       fileBadge.style.padding = "0 8px";
       fileBadge.style.borderRadius = "999px";
-      fileBadge.style.fontFamily = "'Montserrat',sans-serif";
+      fileBadge.style.fontFamily = "'IBM Plex Sans Arabic',sans-serif";
       fileBadge.style.fontSize = "10px";
       fileBadge.style.letterSpacing = ".12em";
       fileBadge.style.textTransform = "uppercase";
