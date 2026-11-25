@@ -211,7 +211,7 @@ html body :is(.wg,.phases-grid){ gap: 16px !important; background: transparent !
 .page-bg{
   position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background-color: #0B1220;
-  background-image: url('../media/gold-world-map.webp');
+  background-image: url('../media/bg-pyramids-night.webp');
   background-repeat: no-repeat; background-position: center center; background-size: cover;
 }
 html body .page-bg::after{ content: ""; position: absolute; inset: 0; background: rgba(6,12,24,.66) !important; }
@@ -291,3 +291,8 @@ html body.ask-public-site .practice-name-ar *{
   color: #F5F3EE !important;
   text-shadow: 0 2px 0 rgba(0,0,0,.55), 0 6px 14px rgba(0,0,0,.6);
 }
+
+/* Pyramids night background: keep the pyramids in view */
+html body .page-bg{ background-position: center 52% !important; background-size: cover !important; }
+html body .page-bg::after{ background: rgba(6,12,24,.45) !important; }
+@media (orientation: portrait){ html body .page-bg{ background-position: center 60% !important; } }
