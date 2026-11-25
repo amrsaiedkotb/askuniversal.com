@@ -113,3 +113,21 @@ html:root{
 @media (max-width: 22rem){
   #nav.site-main-nav .site-main-signature{ display: none; }
 }
+
+/* Header: larger ASK logo */
+html body #nav.site-main-nav .site-main-logo-image{
+  height: clamp(2.6rem, 4.6vw, 4rem) !important;
+  max-height: clamp(2.6rem, 4.6vw, 4rem) !important;
+  width: auto !important;
+  max-width: none !important;
+  flex: none;
+}
+@media (max-width: 40rem){
+  html body #nav.site-main-nav .site-main-logo-image{
+    height: 2.5rem !important;
+    max-height: 2.5rem !important;
+  }
+  #nav.site-main-nav .site-main-signature{
+    width: min(34vw, 8rem);
+  }
+}
