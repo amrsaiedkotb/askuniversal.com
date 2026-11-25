@@ -100,14 +100,14 @@ html:root{
 }
 #nav.site-main-nav .site-main-signature{
   display: block;
-  width: clamp(9rem, 17vw, 16rem);
+  width: 15rem;
   height: auto;
   flex: 0 1 auto;
   min-width: 0;
 }
 @media (max-width: 40rem){
   #nav.site-main-nav .site-main-signature{
-    width: min(40vw, 9rem);
+    width: 8rem;
   }
 }
 @media (max-width: 22rem){
@@ -116,8 +116,8 @@ html:root{
 
 /* Header: larger ASK logo */
 html body #nav.site-main-nav .site-main-logo-image{
-  height: clamp(2.6rem, 4.6vw, 4rem) !important;
-  max-height: clamp(2.6rem, 4.6vw, 4rem) !important;
+  height: 3.75rem !important;
+  max-height: 3.75rem !important;
   width: auto !important;
   max-width: none !important;
   flex: none;
@@ -128,7 +128,7 @@ html body #nav.site-main-nav .site-main-logo-image{
     max-height: 2.5rem !important;
   }
   #nav.site-main-nav .site-main-signature{
-    width: min(34vw, 8rem);
+    width: 8rem;
   }
 }
 
@@ -150,3 +150,15 @@ html body .gallery-item img.inline-brand-logo{
   transform: none !important;
   position: static !important;
 }
+
+/* Medium screens (tablets, or desktop zoomed in): keep header items in rem so zoom enlarges them */
+@media (max-width: 64rem) and (min-width: 40.01rem){
+  html body #nav.site-main-nav .site-main-logo-image{ height: 3.25rem !important; max-height: 3.25rem !important; }
+  #nav.site-main-nav .site-main-signature{ width: 12rem; }
+}
+@media (max-width: 40rem){
+  #nav.site-main-nav .site-main-signature{ width: min(8rem, 36vw); }
+}
+
+/* Footer logo: fixed size, grows with browser zoom */
+html body .footer-brand-logo{ height: 3.5rem; }
