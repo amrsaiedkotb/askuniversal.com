@@ -61,6 +61,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-name{font-family:'Noto Kufi Arabic',sans-serif;font-size:clamp(44px,6vw,80px);font-weight:300;line-height:0.95;color:var(--white);margin-bottom:12px;}
 .hero-name em{color:var(--gold);display:inline;}
 .founder-role{font-size:12px;color:var(--white-dim);margin:0 0 24px;}
+.partners-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:560px;margin:0 0 36px;}
+.partner-photo{margin:0;display:flex;flex-direction:column;gap:12px;}
+.partner-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;display:block;border-radius:6px;border:1px solid rgba(200,164,93,.35);box-shadow:0 18px 48px rgba(0,0,0,.45);}
+.partner-photo figcaption{display:flex;flex-direction:column;gap:4px;text-align:center;}
+.partner-photo-name{font-size:15px;font-weight:700;color:var(--gold);}
+.partner-photo-title{font-size:11.5px;line-height:1.6;color:var(--white-dim);}
+@media(max-width:420px){.partners-photos{gap:10px}.partner-photo-name{font-size:13px}.partner-photo-title{font-size:10.5px}}
 .partner-profile{display:flex;align-items:center;gap:16px;margin:0 0 34px;}
 .partner-profile img{width:88px;height:108px;object-fit:cover;object-position:center 25%;border-radius:3px;}
 .partner-profile-name{font-size:14px;color:var(--gold);margin-bottom:6px;}
@@ -214,27 +221,27 @@ footer{border-top:1px solid var(--border);padding:40px 80px;display:flex;align-i
 <section class="hero">
   <div class="hero-left">
 
-    <!-- Magazine Cover -->
-    <div style="position:relative;margin-bottom:32px;">
-      <img src="assets/media/img-amr-business-leader.jpg"
-           alt="AMR SAIED KOTB — Business Leader Magazine Cover"
-           style="width:100%;max-width:380px;display:block;border-radius:4px;box-shadow:0 24px 64px rgba(0,0,0,0.6);">
-      <!-- Featured Badge -->
-      <div style="position:absolute;top:16px;right:-12px;background:var(--gold);color:var(--black);padding:8px 14px;font-family:'IBM Plex Sans Arabic',sans-serif;font-size:8px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;border-radius:2px;box-shadow:0 4px 16px rgba(200,164,93,0.3);">
-        <span class="ar">نُشر عنه في</span><span class="en">As Featured In</span>
-      </div>
+    <!-- Partners -->
+    <div class="partners-photos">
+      <figure class="partner-photo">
+        <img src="assets/media/partner-amr-kotb.webp" alt="عمرو سعيد قطب — Amr Saied Kotb" loading="eager">
+        <figcaption>
+          <span class="partner-photo-name"><span class="ar">عمرو سعيد قطب</span><span class="en">Amr Saied Kotb</span></span>
+          <span class="partner-photo-title"><span class="ar">المؤسس والشريك الإداري — محامٍ بالنقض</span><span class="en">Founder &amp; Managing Partner — Attorney at the Court of Cassation</span></span>
+        </figcaption>
+      </figure>
+      <figure class="partner-photo">
+        <img src="assets/media/partner-alaa-younes.webp" alt="علاء الدين كمال يونس — Alaa Eldin Kamal Younes" loading="eager">
+        <figcaption>
+          <span class="partner-photo-name"><span class="ar">علاء الدين كمال يونس</span><span class="en">Alaa Eldin Kamal Younes</span></span>
+          <span class="partner-photo-title"><span class="ar">شريك — محامٍ بالاستئناف ومجلس الدولة</span><span class="en">Partner — Attorney before the Court of Appeal and the State Council</span></span>
+        </figcaption>
+      </figure>
     </div>
 
     <div class="hero-eyebrow"><span class="ar">المؤسس والشريك الإداري</span><span class="en">Founder &amp; Managing Partner</span></div>
     <h1 class="hero-name"><span class="ar">عمرو سعيد قطب</span><span class="en">AMR SAIED KOTB</span></h1>
     <p class="founder-role"><span class="ar">عمرو سعيد قطب، محامٍ بالنقض.</span><span class="en">Amr Saied Kotb, Attorney at the Court of Cassation.</span></p>
-    <div class="partner-profile">
-      <img src="assets/media/Amr cover2.png" alt="علاء الدين كمال يونس">
-      <div>
-        <div class="partner-profile-name"><span class="ar">علاء الدين كمال يونس</span><span class="en">Alaa Eldin Kamal Younes</span></div>
-        <div class="partner-profile-title"><span class="ar">محامٍ بالاستئناف ومجلس الدولة</span><span class="en">Attorney before the Court of Appeal and the State Council</span></div>
-      </div>
-    </div>
     <div class="hero-title-bar">
       <div class="hero-title-text"><span class="ar"><img class="inline-brand-logo" src="assets/media/logo-ask-new.png" alt=""> — مستشارون قانونيون ومكتب محاماة</span><span class="en"><img class="inline-brand-logo" src="assets/media/logo-ask-new.png" alt=""> — Legal Advisors &amp; Law Firm</span></div>
       <div class="hero-title-line"></div>
