@@ -249,3 +249,45 @@ html body .page-hero--shared + .hero{ padding-top: 80px !important; }
 /* Footer social row on every page */
 html body footer .footer-social{ display: flex !important; }
 html{ background-color: #0B1220; }
+
+/* =========================================================
+   Headings in the same bold, rounded 3D style as the partners signature
+   ========================================================= */
+html body.ask-public-site :is(h1,h2,.section-title,.page-title,.hero-title,.sec-title,.hti,.year-title,.info-title,.form-title,.chain-title,.cta-title,.contact-headline,.wh,.cbt){
+  font-family: "Lalezar", "Noto Kufi Arabic", sans-serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  line-height: 1.35 !important;
+  color: #F5F3EE !important;
+  text-shadow: 0 2px 0 rgba(0,0,0,.55), 0 6px 14px rgba(0,0,0,.6);
+}
+/* The whole title reads as one: same font, size and weight for every word */
+html body.ask-public-site :is(h1,h2,.section-title,.page-title,.hero-title,.sec-title,.hti,.year-title,.info-title,.form-title,.chain-title,.cta-title,.contact-headline,.wh,.cbt) :is(em,strong,b,span){
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: normal !important;
+  color: inherit !important;
+}
+/* Latin headings (English mode) keep a clean Latin face */
+html[lang="en"] body.ask-public-site :is(h1,h2,.section-title,.page-title,.hero-title,.sec-title,.hti,.year-title,.info-title,.form-title,.chain-title,.cta-title,.contact-headline,.wh,.cbt){
+  font-family: "IBM Plex Sans Arabic", sans-serif !important;
+  font-weight: 700 !important;
+}
+
+/* Round emblem on the home page: no square card behind it */
+html body .about-card.about-card-main{
+  background-color: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+html body .about-card-main-inner{ background: none !important; }
+html body.ask-public-site .practice-name-ar,
+html body.ask-public-site .practice-name-ar *{
+  font-family: "Lalezar", "Noto Kufi Arabic", sans-serif !important;
+  font-weight: 400 !important; font-style: normal !important; letter-spacing: 0 !important;
+  color: #F5F3EE !important;
+  text-shadow: 0 2px 0 rgba(0,0,0,.55), 0 6px 14px rgba(0,0,0,.6);
+}
