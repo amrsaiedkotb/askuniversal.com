@@ -131,3 +131,22 @@ html body #nav.site-main-nav .site-main-logo-image{
     width: min(34vw, 8rem);
   }
 }
+
+/* Keep photo galleries inside the page width, so browser zoom shrinks/enlarges them like the text */
+html body .gallery-grid,
+html body .gallery-grid-2,
+html body .team-photos{
+  max-width: 90rem;
+  margin-inline: auto;
+}
+
+/* Small ASK logo inside gallery captions must stay text-sized */
+html body .gallery-item img.inline-brand-logo{
+  width: auto !important;
+  height: 1em !important;
+  max-width: none;
+  object-fit: contain;
+  filter: none !important;
+  transform: none !important;
+  position: static !important;
+}
