@@ -20,6 +20,7 @@ window.ASK_CONTACT = {
   // الإيميلات
   emailGeneral:  "hello@askuniversal.com",
   emailFounder:  "amr@askuniversal.com",
+  formEmail:     "hello@askuniversal.com",  // رسائل نموذج "تواصل معنا" بتوصل على الإيميل ده
 
   // الموقع
   website:       "www.askuniversal.com",

@@ -73,21 +73,66 @@ if (form) {
     setStatus("", "");
     setLoading(true);
 
+    const optionLabel = (sel, fallback) => {
+      const raw = form.querySelector(`${sel} option:checked`)?.textContent?.trim() || fallback;
+      return String(raw || "").replace(/([A-Za-z)\]&.])\s*([\u0600-\u06FF])/, "$1 — $2");
+    };
+    const serviceLabel = optionLabel("#sv", service);
+    const officeLabel = optionLabel("#of", preferredOffice);
+
+    // 1) Email the message to the firm (address set in assets/js/ask-contact.js -> formEmail)
+    const sendEmail = fetch(`https://formsubmit.co/ajax/${encodeURIComponent(window.ASK_CONTACT?.formEmail || "hello@askuniversal.com")}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `رسالة جديدة من موقع ASK — ${firstName} ${lastName}`,
+        _template: "table",
+        _captcha: "false",
+        _replyto: email,
+        "الاسم": `${firstName} ${lastName}`,
+        "البريد الإلكتروني": email,
+        "الهاتف": phone || "—",
+        "الدولة": country || "—",
+        "مجال الخدمة": serviceLabel || "—",
+        "المكتب المفضل": officeLabel || "—",
+        "الرسالة": message,
+        "لغة الموقع": currentLang() === "en" ? "English" : "العربية",
+      }),
+    }).then(async (res) => {
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) === "false") {
+        throw new Error(data.message || `Email service responded ${res.status}`);
+      }
+      return data;
+    });
+
+    // 2) Keep a copy in the database as before (best effort)
+    const saveCopy = addDoc(collection(db, PORTAL_CONFIG.collections.contactMessages), {
+      first_name: firstName,
+      last_name: lastName,
+      email,
+      ...(phone ? { phone } : {}),
+      ...(country ? { country } : {}),
+      service,
+      ...(preferredOffice ? { preferred_office: preferredOffice } : {}),
+      message,
+      locale: currentLang(),
+      source: "website-contact-form",
+      status: "new",
+      createdAt: serverTimestamp(),
+    });
+
     try {
-      await addDoc(collection(db, PORTAL_CONFIG.collections.contactMessages), {
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        ...(phone ? { phone } : {}),
-        ...(country ? { country } : {}),
-        service,
-        ...(preferredOffice ? { preferred_office: preferredOffice } : {}),
-        message,
-        locale: currentLang(),
-        source: "website-contact-form",
-        status: "new",
-        createdAt: serverTimestamp(),
-      });
+      const [emailResult, saveResult] = await Promise.allSettled([sendEmail, saveCopy]);
+      if (emailResult.status === "rejected") {
+        console.error("Contact email failed.", emailResult.reason);
+      }
+      if (saveResult.status === "rejected") {
+        console.error("Contact database copy failed.", saveResult.reason);
+      }
+      if (emailResult.status === "rejected" && saveResult.status === "rejected") {
+        throw emailResult.reason;
+      }
 
       form.reset();
       window.location.href = "contact-success.html";
