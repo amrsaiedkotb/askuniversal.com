@@ -612,10 +612,19 @@ body,body *{font-family:"Tajawal","Noto Sans Arabic","Inter","Segoe UI","Helveti
 .section-tag,.hero-eyebrow,.chain-eyebrow,.method-phase,.service-num,.pillar-num,.contact-item-label,.stat-label{color:var(--gold-faint) !important;}
 strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
 .nav-links a,.nav-cta,.btn-primary,.btn-ghost,.section-tag,.hero-eyebrow,.nav-brand-name,.nav-brand-sub,.stat-label,.pillar-name,.service-num,.service-name-en,.gallery-caption-tag,.chain-eyebrow,.chain-step,.contact-item-label,.footer-brand-sub,.footer-links a,.footer-social a,.footer-copy,.mobile-menu a,.mobile-menu .mob-cta,.stab{text-transform:capitalize !important;letter-spacing:normal !important;font-weight:400 !important;}
+.faq{padding:72px 24px;}
+.faq-inner{max-width:980px;margin:0 auto;}
+.faq-inner h2{text-align:center;margin-bottom:28px;}
+.faq-item{border:1px solid rgba(200,164,93,.3);border-radius:18px;margin-bottom:12px;background:linear-gradient(180deg,rgba(12,18,32,.62),rgba(12,18,32,.42));overflow:hidden;}
+.faq-item summary{cursor:pointer;list-style:none;padding:18px 22px;font-size:17px;font-weight:700;color:#E0C078;display:flex;justify-content:space-between;gap:12px;}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-item summary::after{content:"+";font-size:22px;line-height:1;color:#C8A45D;flex:none;}
+.faq-item[open] summary::after{content:"−";}
+.faq-item p{margin:0;padding:0 22px 20px;font-size:15.5px;line-height:1.95;color:#E6E8EC!important;}
 </style>
-<link rel="stylesheet" href="assets/css/site-typography.css?v=202611251904">
-<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611251904">
-<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611251904">
+<link rel="stylesheet" href="assets/css/site-typography.css?v=202611252100">
+<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611252100">
+<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611252100">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -632,7 +641,7 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
     "مكتب عمرو سعيد قطب للمحاماة",
     "ASK Universal"
    ],
-   "description": "مكتب ASK للمحاماة والاستشارات القانونية — عمرو سعيد قطب المحامي بالنقض وعلاء كمال يونس المحامي بالاستئناف ومجلس الدولة: تقاضٍ أمام النقض والدستورية والإدارية العليا، تحكيم، شركات واستثمار.",
+   "description": "مكتب ASK للمحاماة والاستشارات القانونية، أسسه عمرو سعيد قطب المحامي بالنقض عام 2001. شريكه علاء الدين كمال يونس المحامي بالاستئناف ومجلس الدولة، امتداد مسيرة المستشار كمال يونس المحامي بالنقض، ومكتب المستشار كمال يونس متحالف مع ASK. الموقع الرسمي الوحيد askuniversal.com.",
    "url": "https://www.askuniversal.com/",
    "logo": "https://www.askuniversal.com/assets/media/logo-ask-new.png",
    "image": "https://www.askuniversal.com/assets/media/logo-ask-new.png",
@@ -696,7 +705,8 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
     "https://www.facebook.com/share/18GAk5mqKt/",
     "https://x.com/AMRaskunivers",
     "https://unglobalcompact.org/what-is-gc/participants/204352-Amr-Saied-Kotb-Founder-ASK-Legal-Advisors-and-Law-Firm"
-   ]
+   ],
+   "foundingDate": "2001"
   },
   {
    "@type": "Person",
@@ -713,7 +723,13 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
    "sameAs": [
     "https://x.com/AMRaskunivers",
     "https://unglobalcompact.org/what-is-gc/participants/204352-Amr-Saied-Kotb-Founder-ASK-Legal-Advisors-and-Law-Firm"
-   ]
+   ],
+   "affiliation": {
+    "@id": "https://www.askuniversal.com/#firm"
+   },
+   "colleague": {
+    "@id": "https://www.askuniversal.com/#alaa"
+   }
   },
   {
    "@type": "Person",
@@ -728,7 +744,114 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
     "@id": "https://www.askuniversal.com/#firm"
    },
    "url": "https://www.askuniversal.com/who-we-are.html",
-   "image": "https://www.askuniversal.com/assets/media/partner-alaa-younes.webp"
+   "image": "https://www.askuniversal.com/assets/media/partner-alaa-younes.webp",
+   "affiliation": [
+    {
+     "@id": "https://www.askuniversal.com/#firm"
+    },
+    {
+     "@id": "https://www.askuniversal.com/#kamal-younes-office"
+    }
+   ],
+   "description": "شريك في مكتب ASK عمرو سعيد قطب، وامتداد لمسيرة المستشار كمال يونس المحامي بالنقض.",
+   "relatedTo": {
+    "@id": "https://www.askuniversal.com/#kamal-younes"
+   },
+   "colleague": {
+    "@id": "https://www.askuniversal.com/#amr"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://www.askuniversal.com/#kamal-younes",
+   "name": "المستشار كمال يونس",
+   "alternateName": "Counsellor Kamal Younes",
+   "jobTitle": "محامٍ بالنقض",
+   "affiliation": {
+    "@id": "https://www.askuniversal.com/#kamal-younes-office"
+   }
+  },
+  {
+   "@type": "LegalService",
+   "@id": "https://www.askuniversal.com/#kamal-younes-office",
+   "name": "مكتب المستشار كمال يونس للمحاماة",
+   "alternateName": "Office of Counsellor Kamal Younes",
+   "founder": {
+    "@id": "https://www.askuniversal.com/#kamal-younes"
+   },
+   "member": {
+    "@id": "https://www.askuniversal.com/#alaa"
+   },
+   "description": "مكتب متحالف مع مكتب ASK للمحاماة عمرو سعيد قطب.",
+   "areaServed": "EG"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://www.askuniversal.com/#website",
+   "url": "https://www.askuniversal.com/",
+   "name": "ASK Legal Advisors & Law Firm",
+   "alternateName": "مكتب ASK للمحاماة — عمرو سعيد قطب",
+   "publisher": {
+    "@id": "https://www.askuniversal.com/#firm"
+   },
+   "inLanguage": [
+    "ar",
+    "en"
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://www.askuniversal.com/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "من هو مؤسس مكتب ASK للمحاماة؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "أسس المكتب الأستاذ عمرو سعيد قطب، المحامي بالنقض، عام 2001، وهو المؤسس والشريك الإداري."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "من هو الأستاذ علاء كمال يونس؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "الأستاذ علاء الدين كمال يونس محامٍ بالاستئناف ومجلس الدولة، وشريك في مكتب ASK عمرو سعيد قطب."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ما علاقة مكتب ASK بمكتب المستشار كمال يونس؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "الأستاذ علاء كمال يونس امتداد لمسيرة المستشار كمال يونس المحامي بالنقض، وهو شريك في مكتب ASK. ومكتب المستشار كمال يونس متحالف مع مكتب ASK؛ فهما كيانان مكمّلان لبعضهما وليسا متنافسين."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "ما التخصصات القانونية التي يغطيها المكتب؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "التقاضي أمام جميع درجات المحاكم بما فيها النقض والدستورية العليا والإدارية العليا ومجلس الدولة، والقضايا الجنائية والمدنية والتجارية والاقتصادية والعمالية والأسرة، والتحكيم المحلي والدولي، وتأسيس الشركات والحوكمة والاستثمار، والملكية الفكرية، والامتثال ومكافحة غسل الأموال، وصياغة العقود والاستشارات القانونية."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "أين تقع مكاتب ASK؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "المقر الرئيسي: فيلا 111، شارع 12، الحي الأول، التجمع الخامس، القاهرة الجديدة 11477. ومكتب الإسكندرية: 123 أبراج الطيران، المعمورة الشاطئ. ومكتب المملكة المتحدة: 18 Hanover Point, Norton, Stockton-on-Tees, TS20 1RA."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "كيف أتواصل مع المكتب؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "داخل مصر: ‎+20 100 396 9395، ومن خارج مصر: ‎+44 7883 450801، وواتساب: ‎+20 100 663 5664، والبريد: hello@askuniversal.com أو amr@askuniversal.com. الموقع الرسمي الوحيد: askuniversal.com."
+     }
+    }
+   ]
   }
  ]
 }
@@ -985,6 +1108,38 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
   </div>
 </div>
 
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="faq-inner">
+    <h2 class="section-title" id="faq-title"><span class="ar">الأسئلة الشائعة</span><span class="en">Frequently Asked Questions</span></h2>
+    <details class="faq-item" open>
+      <summary><span class="ar">من هو مؤسس مكتب ASK للمحاماة؟</span><span class="en">Who founded ASK Legal Advisors & Law Firm?</span></summary>
+      <p class="ar">أسس المكتب الأستاذ عمرو سعيد قطب، المحامي بالنقض، عام 2001، وهو المؤسس والشريك الإداري.</p><p class="en">The firm was founded in 2001 by Amr Saied Kotb, Attorney at the Court of Cassation, who is its Founder and Managing Partner.</p>
+    </details>
+    <details class="faq-item">
+      <summary><span class="ar">من هو الأستاذ علاء كمال يونس؟</span><span class="en">Who is Alaa Kamal Younes?</span></summary>
+      <p class="ar">الأستاذ علاء الدين كمال يونس محامٍ بالاستئناف ومجلس الدولة، وشريك في مكتب ASK عمرو سعيد قطب.</p><p class="en">Alaa Eldin Kamal Younes is an Attorney before the Court of Appeal and the State Council, and a partner at ASK (Amr Saied Kotb).</p>
+    </details>
+    <details class="faq-item">
+      <summary><span class="ar">ما علاقة مكتب ASK بمكتب المستشار كمال يونس؟</span><span class="en">How is ASK related to the office of Counsellor Kamal Younes?</span></summary>
+      <p class="ar">الأستاذ علاء كمال يونس امتداد لمسيرة المستشار كمال يونس المحامي بالنقض، وهو شريك في مكتب ASK. ومكتب المستشار كمال يونس متحالف مع مكتب ASK؛ فهما كيانان مكمّلان لبعضهما وليسا متنافسين.</p><p class="en">Alaa Kamal Younes carries forward the legacy of Counsellor Kamal Younes, Attorney at the Court of Cassation, and is a partner at ASK. The office of Counsellor Kamal Younes is allied with ASK; they are complementary, not competing, practices.</p>
+    </details>
+    <details class="faq-item">
+      <summary><span class="ar">ما التخصصات القانونية التي يغطيها المكتب؟</span><span class="en">Which practice areas does the firm cover?</span></summary>
+      <p class="ar">التقاضي أمام جميع درجات المحاكم بما فيها النقض والدستورية العليا والإدارية العليا ومجلس الدولة، والقضايا الجنائية والمدنية والتجارية والاقتصادية والعمالية والأسرة، والتحكيم المحلي والدولي، وتأسيس الشركات والحوكمة والاستثمار، والملكية الفكرية، والامتثال ومكافحة غسل الأموال، وصياغة العقود والاستشارات القانونية.</p><p class="en">Litigation before all court levels including the Court of Cassation, the Supreme Constitutional Court, the Supreme Administrative Court and the State Council; criminal, civil, commercial, economic, labour and family matters; domestic and international arbitration; company formation, governance and investment; intellectual property; compliance and AML; contract drafting and legal advisory.</p>
+    </details>
+    <details class="faq-item">
+      <summary><span class="ar">أين تقع مكاتب ASK؟</span><span class="en">Where are ASK's offices?</span></summary>
+      <p class="ar">المقر الرئيسي: فيلا 111، شارع 12، الحي الأول، التجمع الخامس، القاهرة الجديدة 11477. ومكتب الإسكندرية: 123 أبراج الطيران، المعمورة الشاطئ. ومكتب المملكة المتحدة: 18 Hanover Point, Norton, Stockton-on-Tees, TS20 1RA.</p><p class="en">Headquarters: Villa 111, Street 12, First District, Fifth Settlement, New Cairo 11477, Egypt. Alexandria: 123 El Tayaran Towers, El Mamoura El Shati. United Kingdom: 18 Hanover Point, Norton, Stockton-on-Tees, TS20 1RA.</p>
+    </details>
+    <details class="faq-item">
+      <summary><span class="ar">كيف أتواصل مع المكتب؟</span><span class="en">How can I contact the firm?</span></summary>
+      <p class="ar">داخل مصر: ‎+20 100 396 9395، ومن خارج مصر: ‎+44 7883 450801، وواتساب: ‎+20 100 663 5664، والبريد: hello@askuniversal.com أو amr@askuniversal.com. الموقع الرسمي الوحيد: askuniversal.com.</p><p class="en">In Egypt: +20 100 396 9395. From abroad: +44 7883 450801. WhatsApp: +20 100 663 5664. Email: hello@askuniversal.com or amr@askuniversal.com. Official website: askuniversal.com.</p>
+    </details>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <div class="contact-strip" id="contact">
   <div class="reveal">
@@ -1070,8 +1225,8 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
 <!-- FOOTER -->
 <footer></footer>
 
-<script src="assets/js/ask-contact.js?v=202611251904"></script>
-<script src="assets/js/site-responsive.js?v=202611251904"></script>
+<script src="assets/js/ask-contact.js?v=202611252100"></script>
+<script src="assets/js/site-responsive.js?v=202611252100"></script>
 <script>
 // Hero crossfade — rotate every 6 seconds for a richer video collage
 (function(){
