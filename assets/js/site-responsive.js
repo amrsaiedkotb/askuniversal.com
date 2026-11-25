@@ -267,10 +267,14 @@
       hasOwnContactSection ? '' : '  <div class="footer-social">' + socialMarkup + '</div>',
 
       '  <div class="footer-bottom">',
-      '    <span class="footer-copy">',
-      '      <span class="ar">جميع الحقوق محفوظة &copy; 2026 — ASKUNIVERSAL</span>',
-      '      <span class="en">' + ltr('&copy; 2026 ASKUNIVERSAL — All Rights Reserved.') + '</span>',
-      '    </span>',
+      '    <p class="footer-copy">',
+      '      <span class="ar">جميع الحقوق محفوظة &copy; 2026 — ASK للمحاماة والاستشارات القانونية (ASKUNIVERSAL).</span>',
+      '      <span class="en">' + ltr('&copy; 2026 ASK Legal Advisors &amp; Law Firm (ASKUNIVERSAL). All Rights Reserved.') + '</span>',
+      '    </p>',
+      '    <p class="footer-legal">',
+      '      <span class="ar">جميع المحتويات المنشورة على هذا الموقع، من نصوص ومقالات وأبحاث وتصميمات وشعارات وصور، مملوكة لمكتب ASK ومحمية بموجب قانون حماية حقوق الملكية الفكرية المصري رقم 82 لسنة 2002 والاتفاقيات الدولية ذات الصلة. ويُحظر نسخها أو إعادة نشرها أو استغلالها كليًا أو جزئيًا دون إذن كتابي مسبق. والمعلومات الواردة بالموقع للتثقيف القانوني العام، ولا تُعد استشارة قانونية ولا تُنشئ علاقة محامٍ بموكل.</span>',
+      '      <span class="en">All content on this website, including text, articles, research, designs, logos and images, is the property of ASK and is protected under Egyptian Intellectual Property Law No. 82 of 2002 and applicable international conventions. No part may be copied, republished or exploited, in whole or in part, without prior written permission. The information on this website is for general legal awareness only; it does not constitute legal advice and does not create an attorney–client relationship.</span>',
+      '    </p>',
       '  </div>',
 
       '</div>'
