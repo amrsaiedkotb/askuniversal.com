@@ -199,6 +199,9 @@ body{margin:0;}
 .pf-contact a.primary{background:#C8A45D;color:#0B1220;border-color:#C8A45D;font-weight:700;}
 @media(max-width:900px){.pf-hero{grid-template-columns:1fr;}.pf-photo{max-width:300px;margin:0 auto;}.pf-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:600px){.pf-stats{grid-template-columns:1fr 1fr;}.pf-grid{grid-template-columns:1fr;}.pf-list{padding:4px 16px;}.pf-row{grid-template-columns:36px 1fr;}}
+.pf-mem-grid{grid-template-columns:repeat(5,1fr)!important;gap:14px;}
+.pf-mem-grid .pf-card{padding:18px 16px;text-align:center;}
+@media(max-width:900px){.pf-mem-grid{grid-template-columns:repeat(2,1fr)!important;}.pf-mem-grid .pf-card:last-child{grid-column:1/-1;}}
 </style>
 <link rel="stylesheet" href="assets/css/site-typography.css?v=202611252102">
 <link rel="stylesheet" href="assets/css/site-responsive.css?v=202611252102">
@@ -268,7 +271,7 @@ body{margin:0;}
 
   <section class="pf-sec" aria-labelledby="pf-mem">
     <h2 id="pf-mem"><span class="ar">العضويات</span><span class="en">Memberships</span></h2>
-    <div class="pf-grid">
+    <div class="pf-grid pf-mem-grid">
 <div class="pf-card pf-mem"><small><span class="ar">عضو</span><span class="en">Member</span></small><strong><span class="ar">الاتحاد الدولي للمحامين (UIA)</span><span class="en">International Association of Lawyers (UIA)</span></strong><span class="pf-sub"><span class="ar">فرنسا</span><span class="en">France</span></span></div>
 <div class="pf-card pf-mem"><small><span class="ar">مشارك أساسي</span><span class="en">Participant</span></small><strong><span class="ar">الميثاق العالمي للأمم المتحدة</span><span class="en">UN Global Compact</span></strong><span class="pf-sub"><span class="ar">الأمم المتحدة — نيويورك</span><span class="en">United Nations — New York</span></span></div>
 <div class="pf-card pf-mem"><small><span class="ar">عضو</span><span class="en">Member</span></small><strong><span class="ar">نقابة المحامين المصرية</span><span class="en">Egyptian Bar Association</span></strong><span class="pf-sub"><span class="ar">جمهورية مصر العربية</span><span class="en">Arab Republic of Egypt</span></span></div>
