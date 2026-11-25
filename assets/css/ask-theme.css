@@ -329,3 +329,57 @@ html body.ask-public-site .btn-primary{
 }
 html body.ask-public-site .btn-primary *{ color: #0B1220 !important; }
 html body.ask-public-site .btn-primary:hover{ background: #E0C078 !important; }
+
+/* =========================================================
+   Social / contact icons: one style site-wide —
+   black glass circle with a polished gold ring, silver glyph
+   ========================================================= */
+html body :is(.footer-social a, .contact-right .contact-item-icon, .channel .ch-icon, .site-whatsapp-float){
+  --ring: conic-gradient(from 200deg, #6E5020, #F6DC92, #B8893A, #FFF4C8, #8C6A2A, #E9C877, #6E5020);
+  width: 3rem !important; height: 3rem !important;
+  display: inline-flex !important; align-items: center; justify-content: center;
+  border-radius: 50% !important;
+  border: 3px solid transparent !important;
+  background:
+    radial-gradient(circle at 34% 26%, #3B414D 0%, #151A24 38%, #05070C 72%) padding-box,
+    var(--ring) border-box !important;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 6px 16px rgba(0,0,0,.55), 0 0 14px rgba(232,196,110,.18) !important;
+  color: #E6E8EC !important;
+  position: relative; overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease !important;
+}
+/* glass highlight */
+html body :is(.footer-social a, .contact-right .contact-item-icon, .channel .ch-icon, .site-whatsapp-float)::after{
+  content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  background: linear-gradient(155deg, rgba(255,255,255,.16) 0%, rgba(255,255,255,.04) 38%, transparent 40%);
+}
+html body .site-whatsapp-float::before{ display: none !important; }
+html body :is(.footer-social a, .contact-right .contact-item-icon, .channel .ch-icon, .site-whatsapp-float) svg{
+  width: 46% !important; height: 46% !important; position: relative; z-index: 1;
+  color: #E6E8EC !important; fill: none; stroke: #E6E8EC;
+}
+html body :is(.footer-social a, .contact-right .contact-item-icon, .channel .ch-icon, .site-whatsapp-float) svg :is(path.fill, .fill),
+html body :is(.channel .ch-icon svg.fill-icon, .contact-item-icon svg.fill-icon, .site-whatsapp-float svg) :is(path, circle){
+  fill: #E6E8EC !important; stroke: none !important;
+}
+html body :is(.channel .ch-icon svg.fill-icon, .contact-item-icon svg.fill-icon, .site-whatsapp-float svg){ fill: #E6E8EC !important; stroke: none !important; }
+html body .site-whatsapp-float{ width: 3.5rem !important; height: 3.5rem !important; }
+@media (hover: hover){
+  html body :is(.footer-social a, .contact-item:hover .contact-item-icon, .channel:hover .ch-icon, .site-whatsapp-float):hover{
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.6), 0 10px 22px rgba(0,0,0,.6), 0 0 22px rgba(232,196,110,.38) !important;
+  }
+}
+html body .footer-social{ gap: .9rem !important; }
+html body .channel .ch-icon svg:not(.fill-icon), html body .channel .ch-icon svg:not(.fill-icon) *,
+html body .contact-right .contact-item-icon svg:not(.fill-icon), html body .contact-right .contact-item-icon svg:not(.fill-icon) *{
+  stroke: #E6E8EC !important; color: #E6E8EC !important;
+}
+html body .channel .ch-icon svg:not(.fill-icon) *, html body .contact-right .contact-item-icon svg:not(.fill-icon) *{ fill: none !important; }
+html body a.site-whatsapp-float.site-whatsapp-float{
+  width: 3.5rem !important; height: 3.5rem !important;
+  position: fixed !important; z-index: 98 !important;
+  left: 1.25rem !important; right: auto !important;
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px)) !important;
+  filter: none !important;
+}
