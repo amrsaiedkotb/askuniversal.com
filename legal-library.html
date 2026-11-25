@@ -210,10 +210,16 @@ html[lang=en] .ch-btn{text-align:left;}
 .page-bg::after{content:'';position:absolute;inset:0;}
 @media(orientation:landscape){.page-bg::after{background:rgba(6,12,24,0.24);}}
 @media(orientation:portrait){.page-bg::after{background:rgba(6,12,24,0.32);}}
+html body .grid.lib-tiles{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important;max-width:1100px;margin-inline:auto;}
+html body button.lib-tile{display:block;padding:0!important;border:0!important;background:none!important;box-shadow:none!important;min-height:0!important;width:100%;cursor:pointer;border-radius:10%/10.6%;transition:transform .2s ease,filter .2s ease;filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));}
+.lib-tile img{display:block;width:100%;height:auto;}
+html body button.lib-tile:hover{transform:translateY(-4px) scale(1.02);filter:drop-shadow(0 14px 26px rgba(0,0,0,.6)) drop-shadow(0 0 14px rgba(232,196,110,.35));}
+.lib-tile:focus-visible{outline:2px solid #C8A45D;outline-offset:4px;}
+@media(max-width:900px){html body .grid.lib-tiles{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;}}
 </style>
-<link rel="stylesheet" href="assets/css/site-typography.css?v=202611251837">
-<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611251837">
-<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611251837">
+<link rel="stylesheet" href="assets/css/site-typography.css?v=202611251900">
+<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611251900">
+<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611251900">
 </head>
 <body>
 <div class="page-bg"></div>
@@ -233,47 +239,31 @@ html[lang=en] .ch-btn{text-align:left;}
 </div>
 
 <div class="grid-wrap" id="grid-wrap">
-  <div class="grid" id="main-grid">
-    <div class="lib-card" onclick="openCat('القوانين المصرية', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M12 6v7M9 9.5h6"/></svg></div>
-      <div class="card-label"><span class="ar">القوانين المصرية</span><span class="en">Egyptian Laws</span></div>
-      <div class="card-sub"><span class="ar">قوانين سارية</span><span class="en">Current Legislation</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('أحكام محكمة النقض', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3v18M7 21h10"/><path d="M4 7h16"/><path d="M6 7l-3 6a3 3 0 0 0 6 0z"/><path d="M18 7l-3 6a3 3 0 0 0 6 0z"/></svg></div>
-      <div class="card-label"><span class="ar">أحكام محكمة النقض</span><span class="en">Court of Cassation</span></div>
-      <div class="card-sub"><span class="ar">مبادئ ومبادئ مقررة</span><span class="en">Principles & Rulings</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('القضاء الإداري', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 21h18M4 10h16M12 3 3 8h18z"/><path d="M6 10v8M10 10v8M14 10v8M18 10v8"/></svg></div>
-      <div class="card-label"><span class="ar">المحكمة الإدارية</span><span class="en">Administrative Court</span></div>
-      <div class="card-sub"><span class="ar">قضاء إداري</span><span class="en">Administrative Judiciary</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('أحكام المحكمة الدستورية', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-      <div class="card-label"><span class="ar">أحكام المحكمة الدستورية</span><span class="en">Constitutional Court</span></div>
-      <div class="card-sub"><span class="ar">رقابة دستورية</span><span class="en">Constitutional Review</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('المبادئ القانونية', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.8 1 1.5 1 2.5h6c0-1 .2-1.7 1-2.5A6 6 0 0 0 12 3z"/></svg></div>
-      <div class="card-label"><span class="ar">المبادئ القانونية</span><span class="en">Legal Principles</span></div>
-      <div class="card-sub"><span class="ar">مبادئ راسخة</span><span class="en">Established Doctrine</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('الجريدة الرسمية والوقائع', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2"/><path d="M7 9h7M7 13h7M7 17h4"/></svg></div>
-      <div class="card-label"><span class="ar">الجريدة الرسمية</span><span class="en">Official Gazette</span></div>
-      <div class="card-sub"><span class="ar">مراسيم وقرارات</span><span class="en">Decrees & Decisions</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('صيغ العقود', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 17c1.5-2 2.5-2 3.5 0s2-1 3.5-1"/></svg></div>
-      <div class="card-label"><span class="ar">صيغ العقود</span><span class="en">Contract Templates</span></div>
-      <div class="card-sub"><span class="ar">عقود جاهزة للاستخدام</span><span class="en">Ready-to-Use Forms</span></div>
-    </div>
-    <div class="lib-card" onclick="openCat('صيغ الدعاوى', '')">
-      <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M14 13l-8 8-3-3 8-8"/><path d="M13 4l7 7M10.5 6.5l7 7"/><path d="M12 5l2-2 7 7-2 2"/><path d="M15 21h6"/></svg></div>
-      <div class="card-label"><span class="ar">صيغ الدعاوى</span><span class="en">Lawsuit Templates</span></div>
-      <div class="card-sub"><span class="ar">صيغ مرافعات قانونية</span><span class="en">Legal Pleading Forms</span></div>
-    </div>
+  <div class="grid lib-tiles" id="main-grid">
+    <button type="button" class="lib-tile" onclick="openCat('القوانين المصرية', '')" aria-label="القوانين المصرية — Egyptian Laws">
+      <img src="assets/media/library/lib-egyptian-laws.webp" alt="القوانين المصرية — Egyptian Laws" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('أحكام محكمة النقض', '')" aria-label="أحكام محكمة النقض — Court of Cassation">
+      <img src="assets/media/library/lib-cassation.webp" alt="أحكام محكمة النقض — Court of Cassation" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('القضاء الإداري', '')" aria-label="القضاء الإداري — Supreme Administrative Court">
+      <img src="assets/media/library/lib-administrative.webp" alt="القضاء الإداري — Supreme Administrative Court" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('أحكام المحكمة الدستورية', '')" aria-label="أحكام المحكمة الدستورية — Supreme Constitutional Court">
+      <img src="assets/media/library/lib-constitutional.webp" alt="أحكام المحكمة الدستورية — Supreme Constitutional Court" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('المبادئ القانونية', '')" aria-label="المبادئ القانونية — Legal Principles">
+      <img src="assets/media/library/lib-principles.webp" alt="المبادئ القانونية — Legal Principles" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('الجريدة الرسمية والوقائع', '')" aria-label="الجريدة الرسمية والوقائع — Official Gazette">
+      <img src="assets/media/library/lib-gazette.webp" alt="الجريدة الرسمية والوقائع — Official Gazette" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('الصيغ القانونية', '')" aria-label="الصيغ القانونية — Legal Forms">
+      <img src="assets/media/library/lib-legal-forms.webp" alt="الصيغ القانونية — Legal Forms" loading="lazy" width="480" height="450">
+    </button>
+    <button type="button" class="lib-tile" onclick="openCat('القانون الأوروبي', '')" aria-label="القانون الأوروبي — European Law">
+      <img src="assets/media/library/lib-european-law.webp" alt="القانون الأوروبي — European Law" loading="lazy" width="480" height="450">
+    </button>
   </div>
 </div>
 
@@ -737,6 +727,8 @@ var CATS = {
 
 function getLangLib(){ return document.documentElement.lang === 'en' ? 'en' : 'ar'; }
 
+CATS['الصيغ القانونية'] = { en: 'Legal Forms', docs: [].concat((CATS['صيغ العقود']||{}).docs||[], (CATS['صيغ الدعاوى']||{}).docs||[]) };
+CATS['القانون الأوروبي'] = CATS['القانون الأوروبي'] || { en: 'European Law', docs: [] };
 window.openCat = function(nameAr) {
   var lang = getLangLib();
   var cat = CATS[nameAr];
@@ -789,8 +781,8 @@ window.onSearch = function() {
      static PDF catalogue above (and its book covers) and left every category
      empty. The catalogue is served straight from /assets/legal-library, so the
      module is intentionally not loaded here. -->
-<script src="assets/js/ask-contact.js?v=202611251837"></script>
-<script src="assets/js/site-responsive.js?v=202611251837"></script>
+<script src="assets/js/ask-contact.js?v=202611251900"></script>
+<script src="assets/js/site-responsive.js?v=202611251900"></script>
 </body>
 </html>
 
