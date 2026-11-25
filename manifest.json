@@ -13,19 +13,19 @@
   "categories": ["legal", "business", "productivity"],
   "icons": [
     {
-      "src": "assets/media/logo-ask-new.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "assets/media/logo-ask-new.png",
+      "src": "assets/media/favicon-ask.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "assets/media/logo-ask-new.png",
+      "src": "assets/media/favicon-ask.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/media/favicon-ask.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -37,13 +37,13 @@
       "name": "تواصل معنا",
       "short_name": "تواصل",
       "url": "/contact-us.html",
-      "icons": [{ "src": "assets/media/logo-ask-new.png", "sizes": "192x192" }]
+      "icons": [{ "src": "assets/media/favicon-ask.png", "sizes": "192x192" }]
     },
     {
       "name": "خدماتنا",
       "short_name": "الخدمات",
       "url": "/services.html",
-      "icons": [{ "src": "assets/media/logo-ask-new.png", "sizes": "192x192" }]
+      "icons": [{ "src": "assets/media/favicon-ask.png", "sizes": "192x192" }]
     }
   ]
 }
