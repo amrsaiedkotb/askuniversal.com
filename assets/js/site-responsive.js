@@ -226,36 +226,12 @@
              '"><svg viewBox="0 0 24 24" aria-hidden="true">' + item.icon + '</svg></a>';
     }).join('');
 
-    var partnerMarkup = [
-      {
-        ar: 'عمرو سعيد قطب',
-        en: 'AMR SAIED KOTB',
-        roleAr: 'محامٍ بالنقض',
-        roleEn: 'Attorney before the Court of Cassation'
-      },
-      {
-        ar: 'علاء الدين كمال يونس',
-        en: 'ALAA ELDIN KAMAL YOUNES',
-        roleAr: 'محامٍ بالاستئناف العالي',
-        roleEn: 'Attorney before the Court of Appeal'
-      }
-    ].map(function(partner){
-      return '<div class="footer-partner">' +
-        '<span class="footer-partner-name"><span class="ar">' + partner.ar + '</span><span class="en">' + ltr(partner.en) + '</span></span>' +
-        '<span class="footer-partner-role"><span class="ar">' + partner.roleAr + '</span><span class="en">' + partner.roleEn + '</span></span>' +
-      '</div>';
-    }).join('');
-
     footer.innerHTML = [
       '<div class="footer-wrap">',
 
       '  <div class="footer-brand">',
       '    <span class="footer-brand-name"><img class="footer-brand-logo" src="assets/media/logo-ask-new.png" alt="ASK"></span>',
-      '    <div class="footer-partners">' + partnerMarkup + '</div>',
-      '    <span class="footer-brand-sub">',
-      '      <span class="ar">مستشارون قانونيون ومكتب محاماة</span>',
-      '      <span class="en">' + ltr('Legal Advisors &amp; Law Firm') + '</span>',
-      '    </span>',
+      '    <img class="footer-signature" src="assets/media/ask-partners-signature.webp" alt="عمرو سعيد قطب — علاء كمال يونس · مستشارون ومحامون ومحكمون / Amr Saied Kotb — Alaa Kamal Younes · Legal Advisors, Attorneys &amp; Arbitrators" width="1200" loading="lazy">',
       '  </div>',
 
       '  <ul class="footer-links">',
