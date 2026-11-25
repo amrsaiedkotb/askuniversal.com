@@ -241,7 +241,7 @@
       }).join(''),
       '  </ul>',
 
-      hasOwnContactSection ? '' : '  <div class="footer-social">' + socialMarkup + '</div>',
+      '  <div class="footer-social">' + socialMarkup + '</div>',
 
       '  <div class="footer-bottom">',
       '    <p class="footer-copy">',
@@ -428,8 +428,17 @@
 
   window.setLang = window.setLang || defaultSetLang;
 
+  function renderPageBackground(){
+    if(!document.body.classList.contains('ask-public-site') || document.querySelector('.page-bg')){ return; }
+    var bg = document.createElement('div');
+    bg.className = 'page-bg';
+    bg.setAttribute('aria-hidden', 'true');
+    document.body.insertBefore(bg, document.body.firstChild);
+  }
+
   function initMenu(){
     renderPublicMainNav();
+    renderPageBackground();
     renderPublicFooter();
     renderFloatingWhatsApp();
     initPageZoom();
