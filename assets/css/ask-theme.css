@@ -222,7 +222,7 @@ html body .page-bg::after{ content: ""; position: absolute; inset: 0; background
 
 /* Let the shared background show through the page's main bands */
 html body.ask-public-site{ background-color: transparent !important; }
-html body.ask-public-site > :is(section, main, div, header):not(.page-hero):not(.academy-hero):not(.hero):not(.mobile-menu):not(.page-bg):not(.site-whatsapp-float){
+html body.ask-public-site > :is(section, main, div, header):not(.page-hero):not(.academy-hero):not(.hero):not(.mobile-menu):not(.page-bg):not(.site-whatsapp-float):not(.gc-sdgpage){
   background-color: transparent !important;
 }
 html body.ask-public-site :is(.section,.values-wrap,.services-wrap,.methodology-wrap,.cta-section,.chain-banner,.practice-section,.offices-wrap,.contact-main,.academy-main){
