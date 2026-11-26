@@ -14,7 +14,7 @@ window.ASK_CONTACT = {
 
   // الأرقام
   whatsapp:      "+20 100 663 5664",   // واتساب
-  phoneEgypt:    "+20 100 396 9395",   // الاتصال من داخل مصر
+  phoneEgypt:    "+20 100 663 5664",   // الاتصال من داخل مصر
   phoneAbroad:   "+44 7883 450801",    // الاتصال من خارج مصر
 
   // الإيميلات
@@ -31,13 +31,13 @@ window.ASK_CONTACT = {
       cityAr: "القاهرة — المقر الرئيسي",
       cityEn: "Cairo — Headquarters",
       address: "Villa 111, Street 12, First District, Fifth Settlement, New Cairo 11477, Egypt",
-      phone: "+20 100 396 9395"
+      phone: "+20 100 663 5664"
     },
     {
       cityAr: "الإسكندرية",
       cityEn: "Alexandria",
       address: "123 El Tayaran Towers, El Mamoura El Shati, Alexandria, Egypt",
-      phone: "+20 100 396 9395"
+      phone: "+20 100 663 5664"
     },
     {
       cityAr: "المملكة المتحدة",
