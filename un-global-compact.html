@@ -88,8 +88,17 @@ body{margin:0;}
 .gc-hero{display:grid;grid-template-columns:260px 1fr;gap:40px;align-items:center;margin-bottom:56px;}
 .gc-logo{background:#fff;border-radius:22px;padding:40px;box-shadow:0 20px 50px rgba(0,0,0,.45);}
 .gc-logo img{display:block;width:100%;height:auto;}
+.pf-wrap .pf-eyebrow{font-size:clamp(18px,2.2vw,22px)!important;font-weight:700;}
 .gc-lead{font-size:17px;line-height:2;color:#E6E8EC;text-align:justify;margin:0 0 12px;}
 .gc-areas{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.gc-panel{border-radius:22px;padding:34px 38px;background:#1E314F;border:1px solid rgba(255,255,255,.18);}
+.gc-panel > h2{color:#fff!important;margin:0 0 22px;}
+.gc-block{margin-bottom:22px;}
+.gc-block h3{display:flex;align-items:center;gap:14px;margin:0 0 10px;color:#fff;font-size:20px;font-family:"IBM Plex Sans Arabic",sans-serif!important;text-shadow:none!important;}
+.gc-block ol{list-style:none;margin:0;padding-inline-start:62px;}
+.gc-block li{display:flex;gap:10px;color:#fff;font-size:16px;line-height:1.9;margin-bottom:8px;text-shadow:none!important;}
+.gc-num{font-weight:800;min-width:22px;}
+.gc-panel .gc-note{color:#DDE3EE;margin:6px 0 0;}
 .gc-area{border-radius:22px;padding:22px 24px;background:#1E314F;border:1px solid rgba(255,255,255,.18);}
 .gc-area h3{display:flex;align-items:center;gap:12px;margin:0 0 10px;color:#fff;font-size:19px;font-family:"IBM Plex Sans Arabic",sans-serif!important;text-shadow:none!important;}
 .gc-area ol{margin:0;padding:0;list-style:none;}
@@ -99,17 +108,27 @@ body{margin:0;}
 .gc-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
 .gc-links a{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid rgba(200,164,93,.45);color:#E0C078;text-decoration:none;}
 .pf-card p{font-size:15px;line-height:1.9;color:#E6E8EC;margin:0;}
-.gc-letter{border-inline-start:3px solid #C8A45D;padding:6px 20px;margin:0;font-size:16px;line-height:1.9;color:#E6E8EC;font-style:italic;}
+.gc-letter{border-inline-start:3px solid #C8A45D;padding:6px 20px;margin:0;font-size:17px;line-height:2;color:#E6E8EC;font-style:normal;}
 .gc-letter cite{display:block;font-style:normal;font-size:13px;color:#C8A45D;margin-top:8px;}
-.gc-sdg{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px;}
+.gc-sdg-wrap{display:grid;grid-template-columns:260px 1fr;gap:32px;align-items:center;}
+.gc-wheel{background:#fff;border-radius:22px;padding:28px;}
+.gc-wheel img{display:block;width:100%;height:auto;}
+html body .gc-wheel p, html body .gc-wheel p *{margin:12px 0 0;text-align:center;color:#1E314F!important;font-weight:700!important;font-size:14px!important;text-shadow:none!important;}
+.gc-sdg{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:14px;}
+.gc-sdg li.gc-sdg-tile{padding:0!important;border:0!important;border-radius:0!important;background:none!important;}
+.gc-sdg-tile img{display:block;width:140px;height:140px;}
+.gc-mission{border-radius:22px;padding:30px 34px;background:#1E314F;color:#fff;}
+html body .gc-mission p{margin:0;font-size:clamp(19px,2.4vw,26px)!important;line-height:1.8!important;color:#fff!important;font-weight:700!important;text-shadow:none!important;}
+.gc-mission small{display:block;margin-top:10px;color:#9FB3D6;font-size:14px;}
+@media(max-width:900px){.gc-sdg-wrap{grid-template-columns:1fr}.gc-wheel{max-width:260px;margin:0 auto}.gc-panel{padding:24px 20px}.gc-block ol{padding-inline-start:0}.gc-sdg-tile img{width:100px;height:100px}}
 .gc-sdg li{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(200,164,93,.4);color:#E6E8EC;font-size:14px;}
 .gc-sdg b{color:#E0242F;}
 .gc-note{font-size:13px;color:#8E95A6;line-height:1.8;margin-top:14px;}
 @media(max-width:900px){.gc-hero{grid-template-columns:1fr}.gc-logo{max-width:240px;margin:0 auto}.gc-areas{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="assets/css/site-typography.css?v=202611260454">
-<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611260454">
-<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611260454">
+<link rel="stylesheet" href="assets/css/site-typography.css?v=202611260501">
+<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611260501">
+<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611260501">
 </head>
 <body>
 <nav id="nav"></nav>
@@ -121,26 +140,26 @@ body{margin:0;}
     <div>
       <div class="pf-eyebrow"><span class="ar">الميثاق العالمي للأمم المتحدة</span><span class="en">UN Global Compact</span></div>
       <h1><span class="ar">التزامنا بالميثاق العالمي للأمم المتحدة</span><span class="en">Our Commitment to the UN Global Compact</span></h1>
-      <p class="gc-lead"><span class="ar">بوصفه مشاركاً في الميثاق العالمي للأمم المتحدة منذ عام 2026، يلتزم مكتب ASK - عمرو سعيد قطب للمحاماة والاستشارات القانونية بمواءمة استراتيجياته وعملياته مع المبادئ العالمية لحقوق الإنسان والعمل والبيئة ومكافحة الفساد، واتخاذ الإجراءات التي تعزز الأهداف المجتمعية.</span><span class="en">As a participant in the United Nations Global Compact since 2026, ASK - Amr Saied Kotb Legal Advisors &amp; Law Firm is committed to aligning its strategies and operations with universal principles on human rights, labour, environment and anti-corruption, and taking actions that advance societal goals.</span></p>
-      <p class="gc-lead"><span class="ar">والميثاق العالمي للأمم المتحدة، الذي انطلق عام 2000، هو أكبر مبادرة للاستدامة المؤسسية في العالم، ويضم أكثر من 20,000 شركة مشاركة.</span><span class="en">Launched in 2000, the UN Global Compact is the world's largest corporate sustainability initiative, with more than 20,000 participating companies.</span></p>
+      <p class="gc-lead"><span class="ar">بوصفنا مشاركين أساسيين في الميثاق العالمي للأمم المتحدة منذ عام 2026، يلتزم مكتب ASK - عمرو سعيد قطب - علاء كمال يونس للمحاماة والاستشارات القانونية بمواءمة استراتيجيات المكتب وعملياته مع المبادئ العالمية لحقوق الإنسان والعمل والبيئة ومكافحة الفساد، واتخاذ الإجراءات التي تعزز الأهداف المجتمعية.</span><span class="en">As core participants in the United Nations Global Compact since 2026, ASK - Amr Saied Kotb - Alaa Kamal Younes Legal Advisors &amp; Law Firm is committed to aligning the firm's strategies and operations with universal principles on human rights, labour, environment and anti-corruption, and taking actions that advance societal goals.</span></p>
+      <p class="gc-lead"><span class="ar">والميثاق العالمي للأمم المتحدة، الذي انطلق عام 2000، هو أكبر مبادرة للاستدامة المؤسسية في العالم، ويضم أكثر من 20,000 شركة مشاركة في أكثر من 160 دولة، منها 107 مشاركين من مصر، ومكتبنا واحد منهم.</span><span class="en">Launched in 2000, the UN Global Compact is the world's largest corporate sustainability initiative, with more than 20,000 participating companies in over 160 countries — 107 of them from Egypt, our firm among them.</span></p>
       <div class="pf-contact"><a class="primary" href="https://unglobalcompact.org/what-is-gc/participants/204352-Amr-Saied-Kotb-Founder-ASK-Legal-Advisors-and-Law-Firm" target="_blank" rel="noopener"><span class="ar">صفحة المشاركة الرسمية على موقع الميثاق</span><span class="en">Official participant profile</span></a></div>
     </div>
   </header>
 
   <section class="pf-sec" aria-labelledby="gc-letter">
     <h2 id="gc-letter"><span class="ar">رسالة الترحيب</span><span class="en">Letter of Welcome</span></h2>
-    <blockquote class="gc-letter" lang="en" dir="ltr">“We applaud your leadership in making this decision and welcome your company's participation in the Global Compact — the world's largest corporate citizenship initiative.”<cite>Sanda Ojiambo, Executive Director, United Nations Global Compact — 18 May 2026</cite></blockquote>
+    <blockquote class="gc-letter"><span class="ar">«نُشيد بقيادتكم في اتخاذ هذا القرار، ونرحّب بمشاركة مؤسستكم في الميثاق العالمي، أكبر مبادرة للمواطنة المؤسسية في العالم، التي تضم آلاف المشاركين من قطاع الأعمال وغيرهم من أصحاب المصلحة من المجتمع المدني والعمال والحكومات في أكثر من 160 دولة.»</span><span class="en">“We applaud your leadership in making this decision and welcome your company's participation in the Global Compact — the world's largest corporate citizenship initiative, with thousands of business participants and other stakeholders from civil society, labour and government based in over 160 countries.”</span><cite><span class="ar">ساندا أوجيامبو، المديرة التنفيذية للميثاق العالمي للأمم المتحدة — 18 مايو 2026 (ترجمة من الأصل الإنجليزي)</span><span class="en">Sanda Ojiambo, Executive Director, United Nations Global Compact — 18 May 2026</span></cite></blockquote>
   </section>
 
   <section class="pf-sec" aria-labelledby="gc-principles">
-    <h2 id="gc-principles"><span class="ar">المبادئ العشرة للميثاق العالمي للأمم المتحدة</span><span class="en">The Ten Principles of the UN Global Compact</span></h2>
-    <div class="gc-areas">
-<div class="gc-area"><h3><img class="gc-ico" src="assets/media/ungc/principle-hr.png" alt="" width="48" height="48"><span class="ar">حقوق الإنسان</span><span class="en">Human Rights</span></h3><ol><li><strong><span class="ar">المبدأ الأول</span><span class="en">Principle 1</span>:</strong> <span class="ar">يجب على الشركات دعم واحترام حماية حقوق الإنسان المُعلنة دولياً.</span><span class="en">Businesses should support and respect the protection of internationally proclaimed human rights;</span></li><li><strong><span class="ar">المبدأ الثاني</span><span class="en">Principle 2</span>:</strong> <span class="ar">التأكد من أنها لا تتواطأ في انتهاكات حقوق الإنسان.</span><span class="en">make sure that they are not complicit in human rights abuses.</span></li></ol></div>
-<div class="gc-area"><h3><img class="gc-ico" src="assets/media/ungc/principle-lab.png" alt="" width="48" height="48"><span class="ar">العمل</span><span class="en">Labour</span></h3><ol><li><strong><span class="ar">المبدأ الثالث</span><span class="en">Principle 3</span>:</strong> <span class="ar">يجب على الشركات دعم حرية تكوين الجمعيات والاعتراف الفعلي بحق المفاوضة الجماعية.</span><span class="en">Businesses should uphold the freedom of association and the effective recognition of the right to collective bargaining;</span></li><li><strong><span class="ar">المبدأ الرابع</span><span class="en">Principle 4</span>:</strong> <span class="ar">القضاء على جميع أشكال العمل القسري والإلزامي.</span><span class="en">the elimination of all forms of forced and compulsory labour;</span></li><li><strong><span class="ar">المبدأ الخامس</span><span class="en">Principle 5</span>:</strong> <span class="ar">القضاء الفعلي على عمالة الأطفال.</span><span class="en">the effective abolition of child labour; and</span></li><li><strong><span class="ar">المبدأ السادس</span><span class="en">Principle 6</span>:</strong> <span class="ar">القضاء على التمييز في الاستخدام والمهنة.</span><span class="en">the elimination of discrimination in respect of employment and occupation.</span></li></ol></div>
-<div class="gc-area"><h3><img class="gc-ico" src="assets/media/ungc/principle-env.png" alt="" width="48" height="48"><span class="ar">البيئة</span><span class="en">Environment</span></h3><ol><li><strong><span class="ar">المبدأ السابع</span><span class="en">Principle 7</span>:</strong> <span class="ar">يجب على الشركات دعم المقاربة الاحترازية تجاه التحديات البيئية.</span><span class="en">Businesses should support a precautionary approach to environmental challenges;</span></li><li><strong><span class="ar">المبدأ الثامن</span><span class="en">Principle 8</span>:</strong> <span class="ar">المبادرة بتعزيز المسؤولية البيئية.</span><span class="en">undertake initiatives to promote greater environmental responsibility; and</span></li><li><strong><span class="ar">المبدأ التاسع</span><span class="en">Principle 9</span>:</strong> <span class="ar">تشجيع تطوير ونشر التقنيات الصديقة للبيئة.</span><span class="en">encourage the development and diffusion of environmentally friendly technologies.</span></li></ol></div>
-<div class="gc-area"><h3><img class="gc-ico" src="assets/media/ungc/principle-ac.png" alt="" width="48" height="48"><span class="ar">مكافحة الفساد</span><span class="en">Anti-Corruption</span></h3><ol><li><strong><span class="ar">المبدأ العاشر</span><span class="en">Principle 10</span>:</strong> <span class="ar">يجب على الشركات مكافحة الفساد بجميع أشكاله بما فيها الابتزاز والرشوة.</span><span class="en">Businesses should work against corruption in all its forms, including extortion and bribery.</span></li></ol></div>
-    </div>
+    <div class="gc-panel">
+    <h2 id="gc-principles"><span class="ar">المبادئ العشرة للميثاق العالمي للأمم المتحدة</span><span class="en">The Ten Principles of the United Nations Global Compact</span></h2>
+<div class="gc-block"><h3><img class="gc-ico" src="assets/media/ungc/principle-hr.png" alt="" width="48" height="48"><span class="ar">حقوق الإنسان</span><span class="en">Human Rights</span></h3><ol><li><span class="gc-num">1</span><span><span class="ar">يجب على الشركات دعم واحترام حماية حقوق الإنسان المُعلنة دولياً.</span><span class="en">Businesses should support and respect the protection of internationally proclaimed human rights;</span></span></li><li><span class="gc-num">2</span><span><span class="ar">التأكد من أنها لا تتواطأ في انتهاكات حقوق الإنسان.</span><span class="en">make sure that they are not complicit in human rights abuses.</span></span></li></ol></div>
+<div class="gc-block"><h3><img class="gc-ico" src="assets/media/ungc/principle-lab.png" alt="" width="48" height="48"><span class="ar">العمل</span><span class="en">Labour</span></h3><ol><li><span class="gc-num">3</span><span><span class="ar">يجب على الشركات دعم حرية تكوين الجمعيات والاعتراف الفعلي بحق المفاوضة الجماعية.</span><span class="en">Businesses should uphold the freedom of association and the effective recognition of the right to collective bargaining;</span></span></li><li><span class="gc-num">4</span><span><span class="ar">القضاء على جميع أشكال العمل القسري والإلزامي.</span><span class="en">the elimination of all forms of forced and compulsory labour;</span></span></li><li><span class="gc-num">5</span><span><span class="ar">القضاء الفعلي على عمالة الأطفال.</span><span class="en">the effective abolition of child labour; and</span></span></li><li><span class="gc-num">6</span><span><span class="ar">القضاء على التمييز في الاستخدام والمهنة.</span><span class="en">the elimination of discrimination in respect of employment and occupation.</span></span></li></ol></div>
+<div class="gc-block"><h3><img class="gc-ico" src="assets/media/ungc/principle-env.png" alt="" width="48" height="48"><span class="ar">البيئة</span><span class="en">Environment</span></h3><ol><li><span class="gc-num">7</span><span><span class="ar">يجب على الشركات دعم المقاربة الاحترازية تجاه التحديات البيئية.</span><span class="en">Businesses should support a precautionary approach to environmental challenges;</span></span></li><li><span class="gc-num">8</span><span><span class="ar">المبادرة بتعزيز المسؤولية البيئية.</span><span class="en">undertake initiatives to promote greater environmental responsibility; and</span></span></li><li><span class="gc-num">9</span><span><span class="ar">تشجيع تطوير ونشر التقنيات الصديقة للبيئة.</span><span class="en">encourage the development and diffusion of environmentally friendly technologies.</span></span></li></ol></div>
+<div class="gc-block"><h3><img class="gc-ico" src="assets/media/ungc/principle-ac.png" alt="" width="48" height="48"><span class="ar">مكافحة الفساد</span><span class="en">Anti-Corruption</span></h3><ol><li><span class="gc-num">10</span><span><span class="ar">يجب على الشركات مكافحة الفساد بجميع أشكاله بما فيها الابتزاز والرشوة.</span><span class="en">Businesses should work against corruption in all its forms, including extortion and bribery.</span></span></li></ol></div>
     <p class="gc-note"><span class="ar">المبادئ العشرة للميثاق العالمي للأمم المتحدة مستمدة من: الإعلان العالمي لحقوق الإنسان، وإعلان منظمة العمل الدولية بشأن المبادئ والحقوق الأساسية في العمل، وإعلان ريو بشأن البيئة والتنمية، واتفاقية الأمم المتحدة لمكافحة الفساد.</span><span class="en">The Ten Principles of the United Nations Global Compact are derived from: the Universal Declaration of Human Rights, the International Labour Organization's Declaration on Fundamental Principles and Rights at Work, the Rio Declaration on Environment and Development, and the United Nations Convention Against Corruption.</span></p>
+    </div>
   </section>
 
   <section class="pf-sec" aria-labelledby="gc-practice">
@@ -154,13 +173,26 @@ body{margin:0;}
   </section>
 
   <section class="pf-sec" aria-labelledby="gc-sdg">
-    <h2 id="gc-sdg"><span class="ar">أهداف التنمية المستدامة التي نسهم فيها</span><span class="en">Sustainable Development Goals We Contribute To</span></h2>
-    <ul class="gc-sdg"><li><b>5</b><span class="ar">المساواة بين الجنسين</span><span class="en">Gender equality</span></li><li><b>8</b><span class="ar">العمل اللائق ونمو الاقتصاد</span><span class="en">Decent work and economic growth</span></li><li><b>10</b><span class="ar">الحد من أوجه عدم المساواة</span><span class="en">Reduced inequalities</span></li><li><b>16</b><span class="ar">السلام والعدل والمؤسسات القوية</span><span class="en">Peace, justice and strong institutions</span></li><li><b>17</b><span class="ar">عقد الشراكات لتحقيق الأهداف</span><span class="en">Partnerships for the goals</span></li></ul>
+    <h2 id="gc-sdg"><span class="ar">أهداف التنمية المستدامة التي نسهم فيها وندعو لها</span><span class="en">The Sustainable Development Goals We Contribute To and Advocate</span></h2>
+    <div class="gc-sdg-wrap">
+      <div class="gc-wheel"><img src="assets/media/ungc/sdg-wheel.jpg" alt="Sustainable Development Goals" width="600" height="517"><p><span class="ar">يدعم مكتب ASK - عمرو سعيد قطب أهداف التنمية المستدامة</span><span class="en">ASK - Amr Saied Kotb supports the Sustainable Development Goals</span></p></div>
+      <ul class="gc-sdg"><li class="gc-sdg-tile"><img src="assets/media/ungc/sdg-05.png" alt="SDG 5" width="250" height="250"></li><li class="gc-sdg-tile"><img src="assets/media/ungc/sdg-08.png" alt="SDG 8" width="250" height="250"></li><li class="gc-sdg-tile"><img src="assets/media/ungc/sdg-10.png" alt="SDG 10" width="250" height="250"></li><li class="gc-sdg-tile"><img src="assets/media/ungc/sdg-16.png" alt="SDG 16" width="250" height="250"></li><li class="gc-sdg-chip"><b>17</b><span class="ar">عقد الشراكات لتحقيق الأهداف</span><span class="en">Partnerships for the goals</span></li></ul>
+    </div>
+  </section>
+
+  <section class="pf-sec" aria-labelledby="gc-mission">
+    <h2 id="gc-mission"><span class="ar">دعوتنا</span><span class="en">Our Call</span></h2>
+    <div class="gc-mission"><p><span class="ar">ندعم رسالة الميثاق العالمي للأمم المتحدة في حشد حركة عالمية من الشركات المستدامة وأصحاب المصلحة لصنع العالم الذي نريده.</span><span class="en">We support the mission of the United Nations Global Compact to mobilize a global movement of sustainable companies and stakeholders to create the world we want.</span></p><small dir="ltr">#UnitingBusiness</small></div>
+  </section>
+
+  <section class="pf-sec" aria-labelledby="gc-cop">
+    <h2 id="gc-cop"><span class="ar">الشفافية وتقرير التقدم السنوي</span><span class="en">Transparency &amp; Annual Communication on Progress</span></h2>
+    <p class="gc-lead"><span class="ar">التزاماً بالشفافية، يقدّم المكتب تقرير التقدم السنوي (CoP) إلى الميثاق العالمي للأمم المتحدة، يستعرض فيه جهوده في تطبيق المبادئ العشرة، ويُنشر التقرير على صفحة المشاركة الرسمية للمكتب.</span><span class="en">Committed to transparency, the firm submits an annual Communication on Progress (CoP) to the UN Global Compact describing its efforts to implement the Ten Principles, published on the firm's official participant profile.</span></p>
   </section>
 </main>
 
 <footer></footer>
-<script src="assets/js/ask-contact.js?v=202611260454"></script>
-<script src="assets/js/site-responsive.js?v=202611260454"></script>
+<script src="assets/js/ask-contact.js?v=202611260501"></script>
+<script src="assets/js/site-responsive.js?v=202611260501"></script>
 </body>
 </html>
