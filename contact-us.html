@@ -165,6 +165,18 @@ body,body *{font-family:"Inter","IBM Plex Sans Arabic","Helvetica Neue",Arial,sa
 .page-bg::after{content:'';position:absolute;inset:0;}
 @media(orientation:landscape){.page-bg::after{background:rgba(6,12,24,0.24);}}
 @media(orientation:portrait){.page-bg::after{background:rgba(6,12,24,0.32);}}
+.maps-wrap{max-width:1280px;margin:0 auto;padding:64px 24px;}
+.maps-wrap h2{text-align:center;margin-bottom:28px;}
+.maps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.map-card{border:1px solid rgba(200,164,93,.3);border-radius:22px;overflow:hidden;background:linear-gradient(180deg,rgba(12,18,32,.62),rgba(12,18,32,.42));display:flex;flex-direction:column;}
+.map-head{display:flex;gap:10px;align-items:flex-start;padding:16px 18px;}
+.map-pin{font-size:20px;line-height:1.2}
+.map-head strong{display:block;color:#E0C078;font-size:17px;margin-bottom:4px;}
+.map-head small{display:block;color:#C9CCD4;font-size:13px;line-height:1.6;text-align:start;}
+.map-card iframe{width:100%;height:260px;border:0;display:block;filter:grayscale(.15) contrast(1.05);}
+.map-go{display:block;text-align:center;padding:13px;font-weight:700;color:#0B1220!important;text-decoration:none;background:linear-gradient(135deg,#FFF3C4 0%,#F7D774 28%,#E8B931 52%,#FFE58A 76%,#F4CE5A 100%);}
+.map-go *{color:#0B1220!important;text-shadow:none!important;}
+@media(max-width:900px){.maps-grid{grid-template-columns:1fr}}
 </style>
 <link rel="stylesheet" href="assets/css/site-typography.css?v=202611262230">
 <link rel="stylesheet" href="assets/css/site-responsive.css?v=202611262230">
@@ -295,6 +307,28 @@ body,body *{font-family:"Inter","IBM Plex Sans Arabic","Helvetica Neue",Arial,sa
     </div>
   </div>
 </div>
+
+<section class="maps-wrap" aria-labelledby="maps-title">
+  <h2 class="section-title" id="maps-title"><span class="ar">مقراتنا على الخريطة</span><span class="en">Our Offices on the Map</span></h2>
+  <div class="maps-grid">
+      <div class="map-card">
+        <div class="map-head"><span class="map-pin">📍</span><div><strong><span class="ar">القاهرة — المقر الرئيسي</span><span class="en">Cairo — Headquarters</span></strong><small dir="ltr">Villa 111, Street 12, First District, Fifth Settlement, New Cairo 11477</small></div></div>
+        <iframe title="Cairo — Headquarters map" src="https://maps.google.com/maps?q=%D9%85%D9%83%D8%AA%D8%A8/%20%D8%B9%D9%85%D8%B1%D9%88%20%D8%B3%D8%B9%D9%8A%D8%AF%20%D9%82%D8%B7%D8%A8%20%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9%2C%20Villa%20111%2C%20Street%2012%2C%20First%20District%2C%20Fifth%20Settlement%2C%20New%20Cairo%2011477%2C%20Egypt&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="map-go" href="https://www.google.com/maps/dir/?api=1&destination=%D9%85%D9%83%D8%AA%D8%A8/%20%D8%B9%D9%85%D8%B1%D9%88%20%D8%B3%D8%B9%D9%8A%D8%AF%20%D9%82%D8%B7%D8%A8%20%D9%84%D9%84%D9%85%D8%AD%D8%A7%D9%85%D8%A7%D8%A9%20%D9%88%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9%2C%20Villa%20111%2C%20Street%2012%2C%20First%20District%2C%20Fifth%20Settlement%2C%20New%20Cairo%2011477%2C%20Egypt" target="_blank" rel="noopener"><span class="ar">الاتجاهات</span><span class="en">Directions</span></a>
+      </div>
+      <div class="map-card">
+        <div class="map-head"><span class="map-pin">📍</span><div><strong><span class="ar">الإسكندرية</span><span class="en">Alexandria</span></strong><small dir="ltr">123 El Tayaran Towers, El Mamoura El Shati, Alexandria</small></div></div>
+        <iframe title="Alexandria map" src="https://maps.google.com/maps?q=123%20El%20Tayaran%20Towers%2C%20El%20Mamoura%20El%20Shati%2C%20Alexandria%2C%20Egypt&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="map-go" href="https://www.google.com/maps/dir/?api=1&destination=123%20El%20Tayaran%20Towers%2C%20El%20Mamoura%20El%20Shati%2C%20Alexandria%2C%20Egypt" target="_blank" rel="noopener"><span class="ar">الاتجاهات</span><span class="en">Directions</span></a>
+      </div>
+      <div class="map-card">
+        <div class="map-head"><span class="map-pin">📍</span><div><strong><span class="ar">المملكة المتحدة</span><span class="en">United Kingdom</span></strong><small dir="ltr">18 Hanover Point, Norton, Stockton-on-Tees, TS20 1RA</small></div></div>
+        <iframe title="United Kingdom map" src="https://maps.google.com/maps?q=18%20Hanover%20Point%2C%20Norton%2C%20Stockton-on-Tees%2C%20TS20%201RA%2C%20United%20Kingdom&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="map-go" href="https://www.google.com/maps/dir/?api=1&destination=18%20Hanover%20Point%2C%20Norton%2C%20Stockton-on-Tees%2C%20TS20%201RA%2C%20United%20Kingdom" target="_blank" rel="noopener"><span class="ar">الاتجاهات</span><span class="en">Directions</span></a>
+      </div>
+  </div>
+</section>
+
 
 <footer></footer>
 
