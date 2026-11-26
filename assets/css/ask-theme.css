@@ -491,3 +491,11 @@ html body a.site-whatsapp-float.site-whatsapp-float svg *{ fill: #fff !important
   #nav.site-main-nav .ls{ gap: 4px !important; }
   #nav.site-main-nav .site-back-button{ display: none !important; }
 }
+
+/* Primary buttons: bright shining gold (same as the Menu button) */
+html body.ask-public-site :is(.btn-primary, .pf-contact a.primary){
+  background: linear-gradient(135deg, #FFF3C4 0%, #F7D774 28%, #E8B931 52%, #FFE58A 76%, #F4CE5A 100%) !important;
+  border-color: #FFE9A8 !important; color: #0B1220 !important;
+  box-shadow: 0 0 12px rgba(255,214,102,.45), inset 0 1px 0 rgba(255,255,255,.7) !important;
+}
+html body.ask-public-site :is(.btn-primary, .pf-contact a.primary) *{ color: #0B1220 !important; text-shadow: none !important; }
