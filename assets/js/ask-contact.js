@@ -15,6 +15,7 @@ window.ASK_CONTACT = {
   // الأرقام
   whatsapp:      "+20 100 663 5664",   // واتساب
   phoneEgypt:    "+20 100 663 5664",   // الاتصال من داخل مصر
+  phoneEgypt2:   "+20 100 396 9395",   // خط ثانٍ داخل مصر (صفحة التواصل فقط)
   phoneAbroad:   "+44 7883 450801",    // الاتصال من خارج مصر
 
   // الإيميلات
@@ -68,6 +69,7 @@ window.ASK_CONTACT = {
   C.links = {
     whatsapp:     'https://wa.me/' + digits(C.whatsapp),
     phoneEgypt:   'tel:+' + digits(C.phoneEgypt),
+    phoneEgypt2:  'tel:+' + digits(C.phoneEgypt2),
     phoneAbroad:  'tel:+' + digits(C.phoneAbroad),
     emailGeneral: 'mailto:' + C.emailGeneral,
     emailFounder: 'mailto:' + C.emailFounder,
