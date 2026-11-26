@@ -22,6 +22,7 @@
       'academy':     ['law-academy.html'],
       'elitigation': ['e-litigation.html'],
       'methodology': ['our-methodology.html'],
+      'ungc':        ['un-global-compact.html'],
       'contact':     ['contact-us.html', 'contact-success.html']
     };
 
@@ -141,6 +142,7 @@
       { href: 'magazine.html', key: 'magazine', ar: 'المجلة', en: 'Legal Magazine', mobileEn: 'Legal Magazine' },
       { href: 'law-academy.html', key: 'academy', ar: 'أكاديمية الحقوق', en: 'Law Academy', mobileEn: 'Law Academy' },
       { href: 'e-litigation.html', key: 'elitigation', ar: 'التقاضي الإلكتروني', en: 'E-Litigation', mobileEn: 'E-Litigation' },
+      { href: 'un-global-compact.html', key: 'ungc', ar: 'الميثاق العالمي', en: 'UN Global Compact', mobileEn: 'UN Global Compact' },
       { href: 'contact-us.html', key: 'contact', ar: 'تواصل', en: 'Contact', mobileEn: 'Contact' }
     ];
 
@@ -200,6 +202,7 @@
       { href: 'magazine.html', ar: 'المجلة', en: 'Legal Magazine' },
       { href: 'law-academy.html', ar: 'الأكاديمية', en: 'Academy' },
       { href: 'e-litigation.html', ar: 'التقاضي الإلكتروني', en: 'E-Litigation' },
+      { href: 'un-global-compact.html', ar: 'الميثاق العالمي', en: 'UN Global Compact' },
       { href: 'contact-us.html', ar: 'تواصل', en: 'Contact' }
     ];
 
