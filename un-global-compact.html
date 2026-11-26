@@ -126,7 +126,7 @@ body{margin:0;}
 .gc-goal-box p{margin:0;color:#E6E8EC!important;font-size:16px;line-height:1.9;}
 .gc-hint{color:#B9BDC8;font-size:14px;margin:0 0 12px;}
 @media(max-width:900px){.gc-sdg{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:480px){.gc-sdg{grid-template-columns:repeat(3,1fr)}}
+
 .gc-wheel{background:#fff;border-radius:22px;padding:28px;}
 .gc-wheel img{display:block;width:100%;height:auto;}
 html body .gc-wheel p, html body .gc-wheel p *{margin:12px 0 0;text-align:center;color:#1E314F!important;font-weight:700!important;font-size:14px!important;text-shadow:none!important;}
@@ -160,11 +160,13 @@ html body .gc-sdgpage p, html body .gc-sdgpage p *{color:#fff!important;text-sha
 .gc-sdgnav a{color:#fff!important;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:999px;background:rgba(0,0,0,.22);}
 .gc-sdgsrc{font-size:13px!important;opacity:.85;margin:0;}
 @media(max-width:640px){.gc-sdgpage-head{grid-template-columns:110px 1fr;gap:16px}.gc-sdgpage-in{padding-top:64px}}
+.gc-sdg{width:100%;margin:0!important;padding:0!important;}
+@media(max-width:640px){.gc-sdg{grid-template-columns:repeat(3,1fr)!important;gap:3px!important;}.gc-sdg li.gc-logo18{padding:4px!important;}}
 @media(max-width:900px){.gc-hero{grid-template-columns:1fr}.gc-logo{max-width:240px;margin:0 auto}.gc-areas{grid-template-columns:1fr}}
 </style>
-<link rel="stylesheet" href="assets/css/site-typography.css?v=202611261723">
-<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611261723">
-<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611261723">
+<link rel="stylesheet" href="assets/css/site-typography.css?v=202611261728">
+<link rel="stylesheet" href="assets/css/site-responsive.css?v=202611261728">
+<link rel="stylesheet" href="assets/css/ask-theme.css?v=202611261728">
 </head>
 <body>
 <nav id="nav"></nav>
@@ -411,7 +413,7 @@ html body .gc-sdgpage p, html body .gc-sdgpage p *{color:#fff!important;text-sha
   document.addEventListener('keydown',function(e){ if(e.key==='Escape' && /^#sdg-/.test(location.hash)) location.hash='gc-sdg'; });
 })();
 </script>
-<script src="assets/js/ask-contact.js?v=202611261723"></script>
-<script src="assets/js/site-responsive.js?v=202611261723"></script>
+<script src="assets/js/ask-contact.js?v=202611261728"></script>
+<script src="assets/js/site-responsive.js?v=202611261728"></script>
 </body>
 </html>

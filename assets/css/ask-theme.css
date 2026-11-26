@@ -499,3 +499,20 @@ html body.ask-public-site :is(.btn-primary, .pf-contact a.primary){
   box-shadow: 0 0 12px rgba(255,214,102,.45), inset 0 1px 0 rgba(255,255,255,.7) !important;
 }
 html body.ask-public-site :is(.btn-primary, .pf-contact a.primary) *{ color: #0B1220 !important; text-shadow: none !important; }
+
+/* Mobile header: smaller flags + menu, bigger names */
+@media (max-width: 40rem){
+  #nav.site-main-nav .lb[data-mobile="tabs"]{ height: 26px; padding: 0 7px !important; font-size: 11px !important; gap: 4px; }
+  #nav.site-main-nav .lb[data-mobile="tabs"] .lb-ico{ font-size: 12px; }
+  #nav.site-main-nav .lb:not([data-mobile="tabs"]){ height: 20px; }
+  #nav.site-main-nav .lb:not([data-mobile="tabs"]) .flag{ height: 20px !important; width: 30px !important; border-radius: 3px; }
+  #nav.site-main-nav .ls{ gap: 4px !important; }
+  html body #nav.site-main-nav .site-main-logo-image{ height: 2.2rem !important; max-height: 2.2rem !important; }
+  #nav.site-main-nav .site-main-signature{ width: min(11.5rem, 46vw) !important; }
+}
+@media (max-width: 40rem){
+  html body #nav.site-main-nav button.lb[data-mobile="tabs"]{ height: 24px !important; min-height: 0 !important; padding: 0 6px !important; }
+  html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-txt,
+  html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-txt *{ font-size: 11px !important; }
+  html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-ico{ font-size: 11px !important; }
+}
