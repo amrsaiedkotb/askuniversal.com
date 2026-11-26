@@ -160,9 +160,9 @@
       '    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7"></path></svg>',
       '  </button>',
       '  <div class="ls">',
-      '    <button class="lb" id="btn-ar" type="button" onclick="setLang(\'ar\')" title="العربية">AR</button>',
-      '    <button class="lb" id="btn-en" type="button" onclick="setLang(\'en\')" title="English">EN</button>',
-      '    <button class="lb" id="btn-tabs" type="button" onclick="toggleMM()" title="Site sections" data-mobile="tabs">☰</button>',
+      '    <button class="lb" id="btn-ar" type="button" onclick="setLang(\'ar\')" title="العربية" aria-label="العربية"><svg class=\'flag\' viewBox=\'0 0 30 20\' aria-hidden=\'true\'><rect width=\'30\' height=\'20\' fill=\'#000\'/><rect width=\'30\' height=\'13.34\' fill=\'#fff\'/><rect width=\'30\' height=\'6.67\' fill=\'#CE1126\'/><g fill=\'#C09300\'><path d=\'M15 7.6c-.9 0-1.5.6-1.5 1.3v1.9c0 .9.7 1.5 1.5 1.5s1.5-.6 1.5-1.5V8.9c0-.7-.6-1.3-1.5-1.3z\'/><path d=\'M12.2 8.3l1.2.6v2.6l-1.6-.8zM17.8 8.3l-1.2.6v2.6l1.6-.8z\'/></g></svg><span class="lb-txt">عربي</span></button>',
+      '    <button class="lb" id="btn-en" type="button" onclick="setLang(\'en\')" title="English" aria-label="English"><svg class=\'flag\' viewBox=\'0 0 60 30\' aria-hidden=\'true\'><clipPath id=\'ukc\'><path d=\'M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z\'/></clipPath><path d=\'M0,0 v30 h60 v-30 z\' fill=\'#012169\'/><path d=\'M0,0 L60,30 M60,0 L0,30\' stroke=\'#fff\' stroke-width=\'6\'/><path d=\'M0,0 L60,30 M60,0 L0,30\' clip-path=\'url(#ukc)\' stroke=\'#C8102E\' stroke-width=\'4\'/><path d=\'M30,0 v30 M0,15 h60\' stroke=\'#fff\' stroke-width=\'10\'/><path d=\'M30,0 v30 M0,15 h60\' stroke=\'#C8102E\' stroke-width=\'6\'/></svg><span class="lb-txt">EN</span></button>',
+      '    <button class="lb" id="btn-tabs" type="button" onclick="toggleMM()" title="القائمة / Menu" aria-label="القائمة / Menu" data-mobile="tabs"><span class="lb-ico">☰</span><span class="lb-txt"><span class="ar">القائمة</span><span class="en">Menu</span></span></button>',
       '  </div>',
       '</div>'
     ].join('');
