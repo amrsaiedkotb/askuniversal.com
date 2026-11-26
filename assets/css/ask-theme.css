@@ -516,3 +516,28 @@ html body.ask-public-site :is(.btn-primary, .pf-contact a.primary) *{ color: #0B
   html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-txt *{ font-size: 11px !important; }
   html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-ico{ font-size: 11px !important; }
 }
+
+/* Header: flags + menu as three small circles */
+html body #nav.site-main-nav .ls{ gap: 8px !important; align-items: center; }
+html body #nav.site-main-nav button.lb{
+  width: 34px !important; height: 34px !important; min-width: 0 !important; min-height: 0 !important;
+  padding: 0 !important; border-radius: 50% !important; overflow: hidden !important;
+  display: inline-flex !important; align-items: center; justify-content: center;
+}
+html body #nav.site-main-nav button.lb:not([data-mobile="tabs"]){
+  border: 2px solid transparent !important; opacity: .6;
+}
+html body #nav.site-main-nav button.lb:not([data-mobile="tabs"]).active{ border-color: #FFE58A !important; opacity: 1; }
+html body #nav.site-main-nav button.lb:not([data-mobile="tabs"]) .flag{
+  width: 52px !important; height: 34px !important; max-width: none; border-radius: 0 !important; flex: none;
+}
+html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-txt{ display: none !important; }
+html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-ico{ font-size: 16px !important; line-height: 1; }
+@media (max-width: 40rem){
+  html body #nav.site-main-nav button.lb{ width: 26px !important; height: 26px !important; }
+  html body #nav.site-main-nav button.lb:not([data-mobile="tabs"]) .flag{ width: 40px !important; height: 26px !important; }
+  html body #nav.site-main-nav button.lb[data-mobile="tabs"] .lb-ico{ font-size: 13px !important; }
+  html body #nav.site-main-nav .ls{ gap: 5px !important; }
+}
+html body #nav.site-main-nav button.lb[data-mobile="tabs"]{ width: 34px !important; height: 34px !important; padding: 0 !important; border-radius: 50% !important; }
+@media (max-width: 40rem){ html body #nav.site-main-nav button.lb[data-mobile="tabs"]{ width: 26px !important; height: 26px !important; } }
