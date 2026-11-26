@@ -424,3 +424,18 @@ html body.ask-public-site :is(.stat-num,.pillar-num,.exp-num,.sn,.num,.service-n
 html body.ask-public-site :is(.btn-primary, .btn-primary *, input, textarea, select, option, button.lb){
   text-shadow: none !important;
 }
+
+/* Floating WhatsApp: glowing green */
+html body a.site-whatsapp-float.site-whatsapp-float{
+  background: radial-gradient(circle at 35% 28%, #4BE07F 0%, #25D366 45%, #128C4A 100%) !important;
+  border: 0 !important;
+  box-shadow: 0 0 0 3px rgba(37,211,102,.25), 0 0 18px rgba(37,211,102,.75), 0 0 36px rgba(37,211,102,.45), 0 8px 18px rgba(0,0,0,.45) !important;
+  animation: askWaGlow 2.4s ease-in-out infinite;
+}
+html body a.site-whatsapp-float.site-whatsapp-float svg,
+html body a.site-whatsapp-float.site-whatsapp-float svg *{ fill: #fff !important; color: #fff !important; stroke: none !important; }
+@keyframes askWaGlow{
+  0%,100%{ box-shadow: 0 0 0 3px rgba(37,211,102,.25), 0 0 14px rgba(37,211,102,.6), 0 0 28px rgba(37,211,102,.35), 0 8px 18px rgba(0,0,0,.45); }
+  50%    { box-shadow: 0 0 0 6px rgba(37,211,102,.18), 0 0 26px rgba(37,211,102,.95), 0 0 52px rgba(37,211,102,.55), 0 8px 18px rgba(0,0,0,.45); }
+}
+@media (prefers-reduced-motion: reduce){ html body a.site-whatsapp-float.site-whatsapp-float{ animation: none; } }
