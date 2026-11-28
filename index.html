@@ -621,6 +621,20 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
 .faq-item summary::after{content:"+";font-size:22px;line-height:1;color:#C8A45D;flex:none;}
 .faq-item[open] summary::after{content:"−";}
 .faq-item p{margin:0;padding:0 22px 20px;font-size:15.5px;line-height:1.95;color:#E6E8EC!important;}
+.team-band{position:relative;z-index:2;padding:40px 20px 10px}
+.partners-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:1040px;margin:0 auto 40px}
+.partner-photo{margin:0;position:relative;display:flex;flex-direction:column}
+.partner-photo > a{display:block}
+.partner-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;display:block;border-radius:0;border:0;filter:grayscale(1) contrast(1.08) brightness(.88);transition:filter .6s ease;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 46%,#000 42%,rgba(0,0,0,.55) 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 46%,#000 42%,rgba(0,0,0,.55) 72%,transparent 100%)}
+.partner-photo:hover img{filter:grayscale(0)}
+.partner-photo figcaption{position:relative;margin:-58px 22px 0;padding:22px 14px 20px;background:#f7f4ee;border-top:3px solid var(--gold,#C8A45D);display:flex;flex-direction:column;gap:6px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.35);flex:1;justify-content:flex-start;min-height:118px}
+.partner-photo-name,a.partner-photo-name{display:block;font-size:1.15rem!important;line-height:1.5;font-weight:800;color:#0B1F3A!important;text-shadow:none!important;letter-spacing:.01em}
+.partner-photo-name .en{text-transform:uppercase;letter-spacing:.02em}
+.partner-photo-title{font-size:.82rem;line-height:1.6;color:#5b6472!important;text-shadow:none!important}
+.partner-photo.chair{grid-column:1/-1;justify-self:center;width:calc((100% - 56px)/3);margin-bottom:12px}
+@media(max-width:820px){.partner-photo.chair{width:100%;margin-bottom:0}.partners-photos{grid-template-columns:1fr;max-width:340px;gap:34px}}
+a.partner-photo-name{text-decoration:none;}
+.team-band .team-head{text-align:center;margin:0 auto 34px}
 </style>
 <link rel="stylesheet" href="assets/css/site-typography.css?v=202611262230">
 <link rel="stylesheet" href="assets/css/site-responsive.css?v=202611262230">
@@ -868,19 +882,42 @@ strong,b,em,i{font-style:normal !important;font-weight:400 !important;}
   </div>
 </div>
 
-<!-- FOUNDER PORTRAITS -->
-<div class="magazine-feature un-global-section reveal">
-  <div class="un-global-card">
-    <div class="un-global-grid">
-      <div class="un-global-media">
-        <img src="assets/media/home-amr-kotb.webp" alt="عمرو سعيد قطب — Amr Saied Kotb" loading="lazy" decoding="async" fetchpriority="low">
-      </div>
-      <div class="un-global-media">
-        <img src="assets/media/home-alaa-younes.webp" alt="علاء الدين كمال يونس — Alaa Eldin Kamal Younes" loading="lazy" decoding="async" fetchpriority="low">
-      </div>
-    </div>
+<!-- TEAM -->
+<section class="team-band" id="partners">
+  <div class="team-head">
+    <div class="section-tag ar">الشركاء</div><div class="section-tag en">Our Partners</div>
   </div>
-</div>
+  <div class="partners-photos">
+      <figure class="partner-photo chair">
+        <img src="assets/media/partner-kamal-younis.webp" alt="المستشار/ كمال يونس — Counsellor Kamal Younis" loading="lazy" decoding="async">
+        <figcaption>
+          <span class="partner-photo-name"><span class="ar">المستشار/ كمال يونس</span><span class="en">Counsellor Kamal Younis</span></span>
+          <span class="partner-photo-title"><span class="ar">رئيس مجلس الشركاء — محامٍ بالنقض</span><span class="en">Chairman of the Partners' Council — Attorney at the Court of Cassation</span></span>
+        </figcaption>
+      </figure>
+      <figure class="partner-photo">
+        <a href="amr-saied-kotb.html" aria-label="السيرة الذاتية لعمرو سعيد قطب"><img src="assets/media/partner-amr-kotb.webp" alt="عمرو سعيد قطب — Amr Saied Kotb" loading="lazy" decoding="async"></a>
+        <figcaption>
+          <a class="partner-photo-name" href="amr-saied-kotb.html"><span class="ar">عمرو سعيد قطب</span><span class="en">Amr Saied Kotb</span></a>
+          <span class="partner-photo-title"><span class="ar">الشريك المؤسس — محامٍ بالنقض</span><span class="en">Founding Partner — Attorney at the Court of Cassation</span></span>
+        </figcaption>
+      </figure>
+      <figure class="partner-photo">
+        <a href="alaa-kamal-younes.html" aria-label="الملف المهني لعلاء الدين كمال يونس"><img src="assets/media/partner-alaa-younes.webp" alt="علاء الدين كمال يونس — Alaa Eldin Kamal Younes" loading="lazy" decoding="async"></a>
+        <figcaption>
+          <a class="partner-photo-name" href="alaa-kamal-younes.html"><span class="ar">علاء الدين كمال يونس</span><span class="en">Alaa Eldin Kamal Younes</span></a>
+          <span class="partner-photo-title"><span class="ar">الشريك والمتحدث الإعلامي — محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي</span><span class="en">Partner &amp; Media Spokesperson — Attorney before the High Court of Appeal and the State Council, International Arbitrator</span></span>
+        </figcaption>
+      </figure>
+      <figure class="partner-photo">
+        <img src="assets/media/partner-seif-younis.webp" alt="سيف الدين كمال يونس — Seif Eldin Kamal Younis" loading="lazy" decoding="async">
+        <figcaption>
+          <span class="partner-photo-name"><span class="ar">سيف الدين كمال يونس</span><span class="en">Seif Eldin Kamal Younis</span></span>
+          <span class="partner-photo-title"><span class="ar">شريك — محامٍ بالاستئناف العالي ومجلس الدولة</span><span class="en">Partner — Attorney before the High Court of Appeal and the State Council</span></span>
+        </figcaption>
+      </figure>
+  </div>
+</section>
 
 <!-- STATS -->
 <div class="stats">
