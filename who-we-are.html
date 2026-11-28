@@ -65,7 +65,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .partners-photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:1040px;margin:0 auto 40px}
 .partner-photo{margin:0;position:relative;display:flex;flex-direction:column}
 .partner-photo > a{display:block}
-.partner-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;display:block;border-radius:0;border:0;filter:grayscale(1) contrast(1.06) brightness(1.02);transition:filter .6s ease;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 80%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0,#000 14%,#000 86%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 12%,#000 80%,transparent 100%);mask-composite:intersect}
+.partner-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;display:block;border-radius:0;border:0;filter:grayscale(1) contrast(1.08) brightness(.88);transition:filter .6s ease;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 46%,#000 42%,rgba(0,0,0,.55) 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 46%,#000 42%,rgba(0,0,0,.55) 72%,transparent 100%)}
 .partner-photo:hover img{filter:grayscale(0)}
 .partner-photo figcaption{position:relative;margin:-58px 22px 0;padding:22px 14px 20px;background:#f7f4ee;border-top:3px solid var(--gold,#C8A45D);display:flex;flex-direction:column;gap:6px;text-align:center;box-shadow:0 14px 34px rgba(0,0,0,.35);flex:1;justify-content:flex-start;min-height:118px}
 .partner-photo-name,a.partner-photo-name{display:block;font-size:1.15rem!important;line-height:1.5;font-weight:800;color:#0B1F3A!important;text-shadow:none!important;letter-spacing:.01em}
@@ -305,7 +305,7 @@ a.partner-photo-name{text-decoration:none;}
    "@id": "https://www.askuniversal.com/#amr",
    "name": "عمرو سعيد قطب",
    "alternateName": "Amr Saied Kotb",
-   "jobTitle": "محامٍ بالنقض — المؤسس والشريك الإداري",
+   "jobTitle": "محامٍ بالنقض — الشريك المؤسس",
    "worksFor": {
     "@id": "https://www.askuniversal.com/#firm"
    },
@@ -333,7 +333,7 @@ a.partner-photo-name{text-decoration:none;}
     "Aladin Kamal Younis",
     "علاء كمال يونس"
    ],
-   "jobTitle": "محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي — شريك",
+   "jobTitle": "محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي — الشريك والمتحدث الإعلامي",
    "worksFor": {
     "@id": "https://www.askuniversal.com/#firm"
    },
@@ -347,7 +347,7 @@ a.partner-photo-name{text-decoration:none;}
      "@id": "https://www.askuniversal.com/#younis-law-firm"
     }
    ],
-   "description": "محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي، شريك بمكتب ASK للمحاماة والاستشارات القانونية، والشريك المؤسس لمؤسسة يونس للمحاماة (المستشار/ كمال يونس).",
+   "description": "محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي، الشريك والمتحدث الإعلامي لمكتب ASK للمحاماة والاستشارات القانونية، والشريك المؤسس لمؤسسة يونس للمحاماة (المستشار/ كمال يونس).",
    "colleague": {
     "@id": "https://www.askuniversal.com/#amr"
    },
@@ -411,14 +411,14 @@ a.partner-photo-name{text-decoration:none;}
         <a href="amr-saied-kotb.html" aria-label="السيرة الذاتية لعمرو سعيد قطب"><img src="assets/media/partner-amr-kotb.webp" alt="عمرو سعيد قطب — Amr Saied Kotb" loading="eager"></a>
         <figcaption>
           <a class="partner-photo-name" href="amr-saied-kotb.html"><span class="ar">عمرو سعيد قطب</span><span class="en">Amr Saied Kotb</span></a>
-          <span class="partner-photo-title"><span class="ar">المؤسس والشريك الإداري — محامٍ بالنقض</span><span class="en">Founder &amp; Managing Partner — Attorney at the Court of Cassation</span></span>
+          <span class="partner-photo-title"><span class="ar">الشريك المؤسس — محامٍ بالنقض</span><span class="en">Founding Partner — Attorney at the Court of Cassation</span></span>
         </figcaption>
       </figure>
       <figure class="partner-photo">
         <a href="alaa-kamal-younes.html" aria-label="الملف المهني لعلاء الدين كمال يونس"><img src="assets/media/partner-alaa-younes.webp" alt="علاء الدين كمال يونس — Alaa Eldin Kamal Younes" loading="eager"></a>
         <figcaption>
           <a class="partner-photo-name" href="alaa-kamal-younes.html"><span class="ar">علاء الدين كمال يونس</span><span class="en">Alaa Eldin Kamal Younes</span></a>
-          <span class="partner-photo-title"><span class="ar">شريك — محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي</span><span class="en">Partner — Attorney before the High Court of Appeal and the State Council, International Arbitrator</span></span>
+          <span class="partner-photo-title"><span class="ar">الشريك والمتحدث الإعلامي — محامٍ بالاستئناف العالي ومجلس الدولة ومحكّم دولي</span><span class="en">Partner &amp; Media Spokesperson — Attorney before the High Court of Appeal and the State Council, International Arbitrator</span></span>
         </figcaption>
       </figure>
       <figure class="partner-photo">
@@ -476,8 +476,8 @@ a.partner-photo-name{text-decoration:none;}
 <section class="firm-identity" id="identity" aria-labelledby="identity-title">
   <div class="firm-identity-box">
     <h2 id="identity-title"><span class="ar">من نحن في سطور</span><span class="en">Who We Are — The Facts</span></h2>
-    <p class="ar">مكتب ASK للمحاماة والاستشارات القانونية (ASK Legal Advisors &amp; Law Firm) أسسه الأستاذ <a href="amr-saied-kotb.html"><strong>عمرو سعيد قطب</strong></a>، المحامي بالنقض، ويتخذ من التجمع الخامس بالقاهرة الجديدة مقراً رئيسياً، وله مكتبان في الإسكندرية والمملكة المتحدة. والأستاذ <a href="alaa-kamal-younes.html"><strong>علاء الدين كمال يونس</strong></a>، المحامي بالاستئناف العالي ومجلس الدولة والمحكّم الدولي، شريك في مكتب ASK. الموقع الرسمي الوحيد للمكتب هو askuniversal.com.</p>
-    <p class="en">ASK Legal Advisors &amp; Law Firm was founded by <a href="amr-saied-kotb.html"><strong>Amr Saied Kotb</strong></a>, Attorney at the Court of Cassation, and is headquartered in the Fifth Settlement, New Cairo, with offices in Alexandria and the United Kingdom. <a href="alaa-kamal-younes.html"><strong>Alaa Eldin Kamal Younes</strong></a>, Attorney before the High Court of Appeal and the State Council, International Arbitrator, is a partner at ASK. The firm's only official website is askuniversal.com.</p>
+    <p class="ar">مكتب ASK للمحاماة والاستشارات القانونية (ASK Legal Advisors &amp; Law Firm) أسسه الأستاذ <a href="amr-saied-kotb.html"><strong>عمرو سعيد قطب</strong></a>، المحامي بالنقض، ويتخذ من التجمع الخامس بالقاهرة الجديدة مقراً رئيسياً، وله مكتبان في الإسكندرية والمملكة المتحدة. والأستاذ <a href="alaa-kamal-younes.html"><strong>علاء الدين كمال يونس</strong></a>، المحامي بالاستئناف العالي ومجلس الدولة والمحكّم الدولي، الشريك والمتحدث الإعلامي لمكتب ASK. الموقع الرسمي الوحيد للمكتب هو askuniversal.com.</p>
+    <p class="en">ASK Legal Advisors &amp; Law Firm was founded by <a href="amr-saied-kotb.html"><strong>Amr Saied Kotb</strong></a>, Attorney at the Court of Cassation, and is headquartered in the Fifth Settlement, New Cairo, with offices in Alexandria and the United Kingdom. <a href="alaa-kamal-younes.html"><strong>Alaa Eldin Kamal Younes</strong></a>, Attorney before the High Court of Appeal and the State Council, International Arbitrator, is Partner and Media Spokesperson at ASK. The firm's only official website is askuniversal.com.</p>
   </div>
 </section>
 
